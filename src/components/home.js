@@ -9,9 +9,9 @@ export default class Home extends React.Component {
       <View>
         <Text>Hello World!</Text>
         <NameInput />
+        <NameInput />
         <SubmitButton />
       </View>
-
     )
   }
 }
