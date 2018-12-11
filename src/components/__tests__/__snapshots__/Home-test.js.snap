@@ -78,6 +78,18 @@ exports[`<Home /> home renders correctly 1`] = `
     }
     underlineColorAndroid="transparent"
   />
+  <TextInput
+    allowFontScaling={true}
+    placeholder="Name"
+    style={
+      Object {
+        "borderColor": "gray",
+        "borderWidth": 1,
+        "height": 40,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
   <View
     accessibilityRole="button"
     accessibilityStates={Array []}
