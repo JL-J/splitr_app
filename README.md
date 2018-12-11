@@ -1,5 +1,12 @@
 # Splitr - split the bill... not your friendships
 
+## Getting started
+`npm install`
+`react-native run-android` or `react-native run-ios`
+
+
+## To run tests
+`npm test`
 
 ## User Stories
 
