@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddReceipt /> renders AddReceipt page correctly 1`] = `
+<View>
+  <Text>
+    Receipt Page!
+  </Text>
+</View>
+`;
