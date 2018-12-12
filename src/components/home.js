@@ -4,6 +4,8 @@ import SubmitButton from './submitButton'
 import NameInput from './nameInput'
 export default class Home extends React.Component {
 
+
+
   render() {
     return (
       <View>
