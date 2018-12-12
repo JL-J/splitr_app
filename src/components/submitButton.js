@@ -6,7 +6,7 @@ export default class SubmitButton extends React.Component {
   render()  {
     return (
       <Button
-        onPress={() => this.setState({dummy: 1})}
+        onPress = { this.props.submitHandler }
         title="Submit"
         color="#841584"
       />
