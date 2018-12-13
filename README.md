@@ -8,6 +8,9 @@
 ## To run tests
 `npm test`
 
+## To run linter
+`./node_modules/.bin/eslint .`
+
 ## User Stories
 
 ```
