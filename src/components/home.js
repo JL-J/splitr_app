@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View , FlatList } from 'react-native';
+import AddButton from './addButtons'
 import SubmitButton from './submitButton'
 import NameInput from './nameInput'
 import ListItem from './listItem'
@@ -34,7 +35,7 @@ class Home extends React.Component {
       renderItem = { info => (
         <ListItem
           personName={ info.item.value }
-          />
+        />
       )}
       />
     )
@@ -48,12 +49,15 @@ class Home extends React.Component {
           <NameInput
             nameHandler = { this.personNameChangeHandler }
           />
-          <SubmitButton
+          <AddButton
             submitHandler = { this.nameSubmitHandler }
           />
         </View>
         <View>
           { this.namesOutput() }
+        </View>
+        <View>
+          <SubmitButton />
         </View>
       </View>
     );
