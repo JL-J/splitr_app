@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, View , FlatList } from 'react-native';
-import SubmitButton from './submitButton'
-import NameInput from './nameInput'
-import ListItem from './listItem'
+import SubmitButton from '../components/submitButton'
+import NameInput from '../components/nameInput'
+import ListItem from '../components/listItem'
 import { connect } from 'react-redux';
 import { addName } from '../actions/name'
 
