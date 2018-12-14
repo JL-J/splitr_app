@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, View , FlatList } from 'react-native';
-import SubmitButton from './submitButton'
-import NameInput from './nameInput'
-import ListItem from './listItem'
+import { Text, View , FlatList, Button } from 'react-native';
+import SubmitButton from '../components/submitButton'
+import NameInput from '../components/nameInput'
+import ListItem from '../components/listItem'
 import { connect } from 'react-redux';
-import { addName } from '../actions/name'
+import { addName } from '../redux/actions/name'
 
 state = {
   personName: '',
@@ -54,6 +54,12 @@ class Home extends React.Component {
         </View>
         <View>
           { this.namesOutput() }
+        </View>
+        <View>
+          <Button
+            title=">"
+            onPress={() => this.props.navigation.navigate('AddDishes')}
+          />
         </View>
       </View>
     );

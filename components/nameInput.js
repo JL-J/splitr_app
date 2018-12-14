@@ -3,7 +3,6 @@ import { TextInput } from 'react-native';
 
 export default class NameInput extends React.Component {
 
-
   render() {
     return (
       <TextInput

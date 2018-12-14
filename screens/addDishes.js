@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View , FlatList } from 'react-native';
-import SubmitButton from './submitButton'
-import NameInput from './nameInput'
-import PriceInput from './priceInput'
-import ListReceipt from './listReceipt'
+import SubmitButton from '../components/submitButton'
+import NameInput from '../components/nameInput'
+import PriceInput from '../components/priceInput'
+import ListReceipt from '../components/listReceipt'
 import { connect } from 'react-redux';
-import { addDish } from '../actions/dish'
+import { addDish } from '../redux/actions/dish'
 
 state = {
   dishName: '',
