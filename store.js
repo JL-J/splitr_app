@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux';
-import nameReducer from './src/reducers/nameReducer';
-import dishReducer from './src/reducers/dishReducer';
+import nameReducer from './reducers/nameReducer';
+import dishReducer from './reducers/dishReducer';
 
 const rootReducer = combineReducers({
 	peopleNames: nameReducer,
