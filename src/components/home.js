@@ -6,18 +6,18 @@ import ListItem from './listItem'
 import { connect } from 'react-redux';
 import { addName } from '../actions/name'
 
-class Home extends React.Component {
+state = {
+  personName: '',
+  peopleNames: []
+}
 
-  state = {
-    personName: '',
-    peopleNames: []
-  }
+class Home extends React.Component {
 
   nameSubmitHandler = () => {
     if(this.state.personName.trim() === '') {
       return;
     }
-    this.props.add(this.state.personName);
+    this.props.addPerson(this.state.personName);
   }
 
   personNameChangeHandler = (value) => {
@@ -68,7 +68,7 @@ const mapStateToProps = state => {
 
 const mapDistpatchToProps = dispatch => {
   return {
-    add: (name) => {
+    addPerson: (name) => {
       dispatch(addName(name))
     }
   }
