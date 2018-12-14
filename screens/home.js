@@ -4,7 +4,7 @@ import SubmitButton from '../components/submitButton'
 import NameInput from '../components/nameInput'
 import ListItem from '../components/listItem'
 import { connect } from 'react-redux';
-import { addName } from '../actions/name'
+import { addName } from '../redux/actions/name'
 
 state = {
   personName: '',

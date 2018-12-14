@@ -5,7 +5,7 @@ import NameInput from '../components/nameInput'
 import PriceInput from '../components/priceInput'
 import ListReceipt from '../components/listReceipt'
 import { connect } from 'react-redux';
-import { addDish } from '../actions/dish'
+import { addDish } from '../redux/actions/dish'
 
 state = {
   dishName: '',
