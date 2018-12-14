@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator, creatAppContainer } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import AddDishes from '../screens/addDishes';
 import Home from '../screens/home';
