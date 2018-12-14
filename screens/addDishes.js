@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View , FlatList } from 'react-native';
+import { Text, View , FlatList, Button } from 'react-native';
 import SubmitButton from '../components/submitButton'
 import NameInput from '../components/nameInput'
 import PriceInput from '../components/priceInput'
@@ -70,6 +70,12 @@ class AddDishes extends React.Component {
         </View>
         <View>
           { this.namesOutput() }
+        </View>
+        <View>
+          <Button
+            title=">"
+            onPress={() => this.props.navigation.navigate('Assignment')}
+          />
         </View>
       </View>
     );
