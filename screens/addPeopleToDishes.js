@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import ListReceipt from '../components/listReceipt';
+import ListItem from '../components/listItem';
 import { connect } from 'react-redux';
 
 export class AddPeopleToDishes extends React.Component {
 
-  namesOutput = () => {
+  dishOutput = () => {
     console.log(this.props.dishes)
     return (
       <FlatList
@@ -21,6 +22,20 @@ export class AddPeopleToDishes extends React.Component {
     )
   }
 
+  namesOutput = () => {
+    return (
+      <FlatList
+      data = { this.props.peopleNames }
+      keyExtractor = {( item, index) => index.toString()}
+      renderItem = { info => (
+        <ListItem
+          personName={ info.item.value }
+          />
+      )}
+      />
+    )
+  }
+
   render() {
     return (
       <View>
@@ -29,6 +44,7 @@ export class AddPeopleToDishes extends React.Component {
         </View>
         <View>
           { this.namesOutput() }
+          { this.dishOutput() }
         </View>
       </View>
     );
@@ -37,6 +53,7 @@ export class AddPeopleToDishes extends React.Component {
 
 const mapStateToProps = state => {
   return {
+    peopleNames: state.peopleNames.peopleNames,
     dishes: state.dishes.dishes
   }
 }
