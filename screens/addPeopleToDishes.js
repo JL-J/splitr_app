@@ -5,13 +5,6 @@ import { connect } from 'react-redux';
 
 export class AddPeopleToDishes extends React.Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     dishes: ["chips £4"]
-  //   };
-  // }
-
   namesOutput = () => {
     console.log(this.props.dishes)
     return (
@@ -35,16 +28,17 @@ export class AddPeopleToDishes extends React.Component {
           <Text>Who owes what?</Text>
         </View>
         <View>
-          <Text>{ this.props.dishes }</Text>
+          { this.namesOutput() }
         </View>
       </View>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  const { dishes } = state
-  return { dishes }
-};
+const mapStateToProps = state => {
+  return {
+    dishes: state.dishes.dishes
+  }
+}
 
 export default connect(mapStateToProps)(AddPeopleToDishes);
