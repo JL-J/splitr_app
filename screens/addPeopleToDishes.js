@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
 import ListReceipt from '../components/listReceipt';
 import ListItem from '../components/listItem';
 import { connect } from 'react-redux';
@@ -30,6 +30,7 @@ export class AddPeopleToDishes extends React.Component {
       renderItem = { info => (
         <ListItem
           personName={ info.item.value }
+          onPress={ style = styles.nameColour }
           />
       )}
       />
@@ -40,10 +41,12 @@ export class AddPeopleToDishes extends React.Component {
     return (
       <View>
         <View>
-          <Text>Who owes what?</Text>
+          <Text style={styles.nameColour}>Who owes what?</Text>
         </View>
         <View>
           { this.namesOutput() }
+        </View>
+        <View>
           { this.dishOutput() }
         </View>
       </View>
@@ -57,5 +60,8 @@ const mapStateToProps = state => {
     dishes: state.dishes.dishes
   }
 }
+
+var styles = StyleSheet.create({
+})
 
 export default connect(mapStateToProps)(AddPeopleToDishes);
