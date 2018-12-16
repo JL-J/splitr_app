@@ -47,7 +47,7 @@ class AddDishes extends React.Component {
         <ListReceipt
           dishName={ info.item.value.dishName }
           price={ info.item.value.dishPrice }
-          />
+        />
       )}
       />
     )
