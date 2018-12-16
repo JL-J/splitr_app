@@ -1,9 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<AddReceipt /> renders AddReceipt page correctly 1`] = `
-<View>
-  <Text>
-    Receipt Page!
-  </Text>
-</View>
+exports[`<AddDishes /> renders AddReceipt page correctly 1`] = `
+  <View>
+    <View>
+      <Text>Add your Dish:</Text>
+      <NameInput />
+      <PriceInput />
+      <SubmitButton />
+    </View>
+  </View>
 `;
