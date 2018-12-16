@@ -1,0 +1,15 @@
+import React from 'react';
+import { shallow, mount, render } from 'enzyme';
+import Home, { NameInput } from '../../screens/addDishes';
+
+import renderer from 'react-test-renderer';
+
+describe('<AddDishes />', () => {
+
+  it('renders AddDishes page correctly', () => {
+    const snap = renderer.create(
+      <AddReceipt />
+      ).toJSON();
+    expect(snap).toMatchSnapshot();
+  });
+});
