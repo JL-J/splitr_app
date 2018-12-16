@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 export class AddPeopleToDishes extends React.Component {
 
   dishOutput = () => {
-    console.log(this.props.dishes)
     return (
       <FlatList
       data = { this.props.dishes }
@@ -30,8 +29,7 @@ export class AddPeopleToDishes extends React.Component {
       renderItem = { info => (
         <ListItem
           personName={ info.item.value }
-          onPress={ style = styles.nameColour }
-          />
+        />
       )}
       />
     )
@@ -41,7 +39,7 @@ export class AddPeopleToDishes extends React.Component {
     return (
       <View>
         <View>
-          <Text style={styles.nameColour}>Who owes what?</Text>
+          <Text>Who owes what?</Text>
         </View>
         <View>
           { this.namesOutput() }
