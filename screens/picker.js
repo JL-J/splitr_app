@@ -19,10 +19,9 @@ export class PickerPage extends React.Component {
    }
 
   dynamicPickerList() {
-      this.props.peopleNames.map( (info) => {
-        return <Picker.Item label={info.value} value={info.value} />
-      };
-    )
+    return ( this.props.peopleNames.map(name => {
+       <Picker.Item label={name} value={name} />
+    }));
   }
 
   render() {
@@ -47,7 +46,9 @@ export class PickerPage extends React.Component {
              style={{ width: 120 }}
              selectedValue={this.state.selected}
              onValueChange={this.onValueChange.bind(this)}>
-              {this.dynamicPickerList()}
+            { this.props.peopleNames.map( (name) => {
+              <Picker.Item label={name} value={name} />
+            })}
             </Picker>
             </Form>
         </Content>
