@@ -1,9 +1,6 @@
 import { ADD_TRIP } from '../actions/types';
 
 const initialState = {
-  tripName: '',
-	tripLocation: '',
-	tripDate: '',
   currentTrip: {},
   trips: []
 }
@@ -13,6 +10,7 @@ const tripReducer = (state = initialState, action) => {
 		case ADD_TRIP:
 		return {
 			...state,
+			currentTrip: Object.assign({}, action.payload),
 			trips: state.trips.concat({
 				key: Math.random(),
 				value: action.payload
