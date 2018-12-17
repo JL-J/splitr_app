@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View , FlatList, Button } from 'react-native';
-import SubmitButton from '../components/submitButton'
-import NameInput from '../components/nameInput'
-import ListItem from '../components/listItem'
+import SubmitButton from '../components/submitButton';
+import NameInput from '../components/nameInput';
+import ListItem from '../components/listItem';
 import { connect } from 'react-redux';
-import { addName } from '../redux/actions/name'
+import { addName } from '../redux/actions/name';
 
 state = {
   personName: '',
@@ -44,7 +44,7 @@ class Home extends React.Component {
     return (
       <View>
         <View>
-          <Text>Hello World!</Text>
+          <Text>Splitr</Text>
           <NameInput
             nameHandler = { this.personNameChangeHandler }
           />

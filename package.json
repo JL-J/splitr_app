@@ -4,11 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest --colors"
   },
   "dependencies": {
     "native-base": "^2.8.2",
     "react": "16.6.1",
+    "enzyme-to-json": "^3.3.5",
+    "react-dom": "^16.6.3",
     "react-native": "0.57.7",
     "react-native-gesture-handler": "^1.0.12",
     "react-native-router-flux": "^4.0.6",
@@ -19,6 +21,8 @@
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "^5.10.0",
     "eslint-plugin-react": "^7.11.1",
     "jest": "23.6.0",
@@ -26,9 +30,16 @@
     "react-test-renderer": "16.6.1"
   },
   "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "setupTestFrameworkScriptFile": "<rootDir>/setupTests.js",
     "preset": "react-native",
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "globals": {
+      "state": true,
+      "window": true
     }
   }
 }
