@@ -1,19 +1,31 @@
 import React from 'react';
-import { Text, View , FlatList, TextInput } from 'react-native';
-import SubmitButton from '../components/submitButton'
-import ListTrip from '../components/listTrip'
+// import { Container, Header, Content, Text, Body, Title, Form, Picker } from 'native-base'
+import { Text, View , FlatList, TextInput, Button } from 'react-native';
+import { DatePicker} from 'native-base';
+import ListTrip from '../components/listTrip';
 import { connect } from 'react-redux';
 import { addTrip } from '../redux/actions/trip'
 
 state = {
   tripName: '',
 	tripLocation: '',
-	tripDate: '',
+  tripDate: new Date(),
   currentTrip: {},
   trips: []
 }
 
 class AddTrip extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      tripName: '',
+      tripLocation: '',
+      tripDate: new Date(),
+      currentTrip: {},
+      trips: []
+    };
+  }
 
   tripSubmitHandler = () => {
     if(this.state.tripName.trim() === '') {
@@ -24,7 +36,7 @@ class AddTrip extends React.Component {
       tripLocation: this.state.tripLocation,
       tripDate: this.state.tripDate
     };
-    this.props.addTrip(trip)
+    this.props.addTrip(trip);
   }
 
   tripNameChangeHandler = (value) => {
@@ -76,17 +88,32 @@ class AddTrip extends React.Component {
               style={{height: 40, borderColor: 'gray', borderWidth: 1}}
               placeholder="Location"
             />
-            <TextInput
-              onChangeText = { this.tripDateChangeHandler.bind(this)}
-              style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-              placeholder="Date"
+            <Text>Date:</Text>
+            <DatePicker
+              defaultDate={new Date()}
+              minimumDate={new Date(2018, 1, 1)}
+              maximumDate={new Date(2020, 12, 31)}
+              locale={"en"}
+              timeZoneOffsetInMinutes={undefined}
+              modalTransparent={false}
+              animationType={"fade"}
+              androidMode={"default"}
+              placeHolderText="Select date"
+              textStyle={{ color: "green" }}
+              placeHolderTextStyle={{ color: "#d3d3d3" }}
+              onDateChange={this.tripDateChangeHandler.bind(this)}
             />
-            <SubmitButton
-              submitHandler = { this.tripSubmitHandler }
+            <Button
+              onPress = {this.tripSubmitHandler}
+              title="Submit"
+              color="#841584"
             />
           </View>
           <View>
-            { this.tripsOutput() }
+            <Button
+            title=">"
+            onPress={() => this.props.navigation.navigate('AddNames')}
+          />
           </View>
         </View>
     );
@@ -95,7 +122,8 @@ class AddTrip extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    trips: state.trips.trips
+    trips: state.trips.trips,
+    currentTrip: state.trips.currentTrip
   }
 }
 
