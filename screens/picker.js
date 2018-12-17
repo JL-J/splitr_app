@@ -1,7 +1,9 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Form, Picker } from 'native-base'
+import { Container, Header, Content, Text, Body, Title, Form, Item, Picker,Icon } from 'native-base'
 import { connect } from 'react-redux';
+import ListReceipt from '../components/listReceipt'
+import PickerList from '../components/pickerList';
 
 export class PickerPage extends React.Component {
 
@@ -10,42 +12,52 @@ export class PickerPage extends React.Component {
     this.state = {
       selected: "key1"
     };
+    console.log(this.props.peopleNames);
   }
 
-  onValueChange(value: string) {
+  onValueChange2(value: string) {
      this.setState({
-       selected: value
+       selected2: value
      });
    }
 
   render() {
     return (
       <Container>
-        <Header>
-          <Body>
-            <Title>Who owes what?</Title>
-          </Body>
-        </Header>
-        <Content>
-          <FlatList
-            data = { this.props.dishes }
-            keyExtractor = {( item, index) => index.toString()}
-            renderItem = { info =>
-              <Text>{ info.item.value.dishName }  £{ info.item.value.dishPrice }</Text>
-            }
-          />
-          <Form>
-           <Picker
-             note
-             mode="dropdown"
-             style={{ width: 120 }}
-             selectedValue={this.state.selected}
-             onValueChange={this.onValueChange.bind(this)}
-           >
-            <Picker.Item label="Bill" value="bill"/>
-            </Picker>
+        <Header />
+        <FlatList
+          data = { this.props.dishes }
+          keyExtractor = {( item, index) => index.toString()}
+          renderItem = { info => (
+            <Content>
+              <ListReceipt
+                dishName={ info.item.value.dishName }
+              />
+              <Form>
+              <Item picker>
+                <Picker
+                  mode="dropdown"
+                  style={{ width: undefined }}
+                  placeholder="FOOD"
+                  placeholderStyle={{ color: "#bfc6ea" }}
+                  placeholderIconColor="#007aff"
+                  selectedValue={this.state.selected2}
+                  onValueChange={this.onValueChange2.bind(this)}
+                >
+                <Picker.Item label="NAME" value="0"/>
+                { this.props.peopleNames.map((item) =>
+                  <Picker.Item
+                    label={ item.value }
+                    value={ item.value }
+                    key={item.key}
+                  />)
+                }
+                </Picker>
+              </Item>
             </Form>
-        </Content>
+          </Content>
+      )}
+      />
       </Container>
     );
   }
@@ -54,7 +66,8 @@ export class PickerPage extends React.Component {
 const mapStateToProps = state => {
   return {
     peopleNames: state.peopleNames.peopleNames,
-    dishes: state.dishes.dishes
+    dishes: state.dishes.dishes,
+    reduxstate: state
   }
 }
 
