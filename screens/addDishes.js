@@ -71,6 +71,12 @@ class AddDishes extends React.Component {
         <View>
           { this.namesOutput() }
         </View>
+        <View>
+         <Button
+           title=">"
+           onPress={() => this.props.navigation.navigate('Picker')}
+         />
+       </View>
       </View>
     );
   }
