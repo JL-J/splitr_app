@@ -10,12 +10,12 @@ export class AddPeopleToDishes extends React.Component {
     this.ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
       basic: true,
-      showReceipt: false,
+      showReceipt: true,
     };
   }
 
- _toggleShow = () => {
-   this.setState({showReceipt: !this.state.showReceipt})
+ toggleShow = () => {
+   this.setState({showReceipt: true})
  }
 
  renderReceipt = () => {
@@ -31,9 +31,6 @@ export class AddPeopleToDishes extends React.Component {
        )}
        />
      );
-    } else {
-       return null;
-    }
  }
 
   render() {
@@ -53,14 +50,17 @@ export class AddPeopleToDishes extends React.Component {
               leftOpenValue={75}
               rightOpenValue={-75}
               left={
-                <Button items onPress={() => this._toggleShow()} >
+                <Button items onPress={() => this.toggleShow()} >
                    <Icon active name='paper' style={{color: 'white'}}/>
                 </Button>
               }
               body={
                 <View>
                   <Text style={{ paddingLeft: 100, fontWeight: 'bold' }}>{ info.item.value }</Text>
-                  <List>{ this.renderReceipt()}</List>
+                  <List
+                    showReceipt={this.state.showReceipt}>
+                    { this.renderReceipt()}
+                  </List>
                 </View>
               }
               right={
