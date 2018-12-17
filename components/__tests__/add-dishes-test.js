@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Home, { NameInput } from '../../screens/addDishes';
+import Home, { AddDishes, NameInput } from '../../screens/addDishes';
 
 import renderer from 'react-test-renderer';
 
@@ -8,7 +8,7 @@ describe('<AddDishes />', () => {
 
   it('renders AddDishes page correctly', () => {
     const snap = renderer.create(
-      <AddReceipt />
+      <AddDishes />
       ).toJSON();
     expect(snap).toMatchSnapshot();
   });
