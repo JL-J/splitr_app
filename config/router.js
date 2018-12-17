@@ -3,11 +3,13 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import AddDishes from '../screens/addDishes';
 import Home from '../screens/home';
+import Picker from '../screens/picker';
 
 const RootStack = createStackNavigator(
   {
     AddNames: Home,
-    AddDishes: AddDishes
+    AddDishes: AddDishes,
+    Picker: Picker
   },
   {
     initialRouteName: "AddNames"
