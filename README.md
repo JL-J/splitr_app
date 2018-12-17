@@ -56,7 +56,7 @@ I want to be able assign dishes to a selected diner
 
 ```
 As a user
-So I determine which diner will pay for each dish,
+So I determine which diner will pay for dinner,
 I want to see the total amount each diner owes
 ```
 
@@ -66,7 +66,9 @@ I want to see the total amount each diner owes
 * Redux
 * Jest
 * Enzyme
+* ESlint
 * XCode
+* Android Studio
 
 
 ## Tech Team
