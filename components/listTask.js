@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-const ListReceipt = (props) => {
+const ListTask = (props) => {
     return (
       <TouchableOpacity>
         <View>
-          <Text>{ props.dishName }</Text>
-          <Text>£{ props.price }</Text>
+          <Text>{ props.taskName }</Text>
+          <Text>£{ props.taskPrice }</Text>
         </View>
       </TouchableOpacity>
     );
 }
 
-export default ListReceipt;
+export default ListTask;

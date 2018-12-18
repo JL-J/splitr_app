@@ -58,7 +58,7 @@ class AddNames extends React.Component {
           />
           { this.namesOutput() }
           <NavigationButton
-            navigate = {() => this.props.navigation.navigate('AddDishes')}
+            navigate = {() => this.props.navigation.navigate('AddTasks')}
           />
         </Content>
       </Container>
