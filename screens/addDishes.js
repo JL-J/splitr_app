@@ -60,10 +60,11 @@ class AddDishes extends React.Component {
     <Container>
       <Header>
         <Body>
-          <Title>Tasks</Title>
+          <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
         </Body>
       </Header>
       <Content>
+        <Title style={{color:"black"}}>Tasks</Title>
         <NameInput
           nameHandler = { this.dishNameChangeHandler }
         />
@@ -85,7 +86,9 @@ class AddDishes extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes.dishes
+    dishes: state.dishes.dishes,
+    trips: state.trips.trips,
+    currentTrip: state.trips.currentTrip
   }
 }
 

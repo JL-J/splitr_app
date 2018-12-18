@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, TextInput } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Button, DatePicker} from 'native-base';
+import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import ListTrip from '../components/listTrip';

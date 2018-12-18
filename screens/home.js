@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View , FlatList } from 'react-native';
-import { Header, Container, Content, Button} from 'native-base'
+import { Header, Container, Content, Button, Title, Subtitle} from 'native-base'
 import SubmitButton from '../components/submitButton';
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput';
@@ -46,11 +46,10 @@ class Home extends React.Component {
     return (
       <Container>
         <Header>
-              <Text>{this.props.currentTrip.tripName}, </Text>
-              <Text>{this.props.currentTrip.tripLocation}</Text>
+         <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
         </Header>
         <Content>
-          <Text>Add participiants</Text>
+          <Title style={{color:"black"}}>Whos attending?</Title>
           <NameInput
             nameHandler = { this.personNameChangeHandler }
           />
