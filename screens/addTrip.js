@@ -3,6 +3,7 @@ import { FlatList, TextInput } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
+import Calendar from '../components/calendar'
 import ListTrip from '../components/listTrip';
 import { connect } from 'react-redux';
 import { addTrip } from '../redux/actions/trip'
@@ -10,7 +11,8 @@ import { addTrip } from '../redux/actions/trip'
 state = {
   tripName: '',
 	tripLocation: '',
-  tripDate: new Date(),
+  tripStartDate: new Date(),
+  tripEndDate: new Date(),
   currentTrip: {},
   trips: []
 }
@@ -22,7 +24,8 @@ class AddTrip extends React.Component {
     this.state = {
       tripName: '',
       tripLocation: '',
-      tripDate: new Date(),
+      tripStartDate: new Date(),
+      tripEndDate: new Date(),
       currentTrip: {},
       trips: []
     };
@@ -35,7 +38,8 @@ class AddTrip extends React.Component {
     let trip = {
       tripName: this.state.tripName,
       tripLocation: this.state.tripLocation,
-      tripDate: this.state.tripDate
+      tripStartDate: this.state.tripStartDate,
+      tripEndDate: this.state.tripEndDate,
     };
     this.props.addTrip(trip);
   }
@@ -52,27 +56,33 @@ class AddTrip extends React.Component {
     });
   }
 
-  tripDateChangeHandler = (value) => {
+  tripStartDateChangeHandler = (value) => {
     this.setState({
-      tripDate: value
+      tripStartDate: value
     });
   }
 
-  tripsOutput = () => {
-    return (
-      <FlatList
-      data = { this.props.trips }
-      keyExtractor = {( item, index) => index.toString()}
-      renderItem = { info => (
-        <ListTrip
-          tripName={ info.item.value.tripName }
-          tripLocation={ info.item.value.tripLocation }
-          tripDate={ info.item.value.tripDate }
-          />
-      )}
-      />
-    )
+  tripEndDateChangeHandler = (value) => {
+    this.setState({
+      tripEndDate: value
+    });
   }
+
+  // tripsOutput = () => {
+  //   return (
+  //     <FlatList
+  //     data = { this.props.trips }
+  //     keyExtractor = {( item, index) => index.toString()}
+  //     renderItem = { info => (
+  //       <ListTrip
+  //         tripName={ info.item.value.tripName }
+  //         tripLocation={ info.item.value.tripLocation }
+  //         tripDate={ info.item.value.tripDate }
+  //         />
+  //     )}
+  //     />
+  //   )
+  // }
 
   render() {
     return (
@@ -93,20 +103,13 @@ class AddTrip extends React.Component {
             style={{height: 40, borderColor: 'gray', borderWidth: 1}}
             placeholder="Location"
           />
-          <Text>Date:</Text>
-          <DatePicker
-            defaultDate={new Date()}
-            minimumDate={new Date(2018, 1, 1)}
-            maximumDate={new Date(2020, 12, 31)}
-            locale={"en"}
-            timeZoneOffsetInMinutes={undefined}
-            modalTransparent={false}
-            animationType={"fade"}
-            androidMode={"default"}
-            placeHolderText="Select date"
-            textStyle={{ color: "green" }}
-            placeHolderTextStyle={{ color: "#d3d3d3" }}
-            onDateChange={this.tripDateChangeHandler.bind(this)}
+          <Text>Start Date:</Text>
+          <Calendar
+            onDateChangeHandler = {this.tripStartDateChangeHandler.bind(this)}
+          />
+          <Text>End Date:</Text>
+          <Calendar
+            onDateChangeHandler = {this.tripEndDateChangeHandler.bind(this)}
           />
           <SubmitButton
             submitHandler =  {this.tripSubmitHandler}
