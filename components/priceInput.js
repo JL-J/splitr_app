@@ -9,7 +9,7 @@ export default class PriceInput extends React.Component {
       <TextInput
       onChangeText = { this.props.nameHandler }
       style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-      placeholder="Price"
+      placeholder="Estimated cost"
       />
     )
   }
