@@ -13,11 +13,24 @@ export class PickerPage extends React.Component {
     this.state = {
       selected: "key1"
     };
+    this.getSelectedValue = this.getSelectedValue.bind(this)
   }
 
   onValueChange2(key, value) {
-    console.log(this.reduxstate);
-    this.props.nameSelected(value, key);
+    // console.log(this.props.reduxstate);
+    this.props.nameSelectedRed(value, key); // redux
+    this.setState({ //compoennet state
+      [key]: value
+    })
+    console.log(this.props.reduxstate);
+    // console.log(this.props.reduxstate);
+    //console.log(this.props.reduxstate,key, value);
+   }
+
+   getSelectedValue(key) {
+    // console.log(this.props.reduxstate);
+    // console.log('key',this.state[key]);
+    return this.props.nameSelectedState[key];
    }
 
   render() {
@@ -38,10 +51,10 @@ export class PickerPage extends React.Component {
                   mode="dropdown"
                   iosIcon={<Icon name="ios-arrow-dropdown" />}
                   style={{ width: undefined }}
-                  placeholder="FOOD"
+                  placeholder="Person"
                   placeholderStyle={{ color: "#bfc6ea" }}
                   placeholderIconColor="#007aff"
-                  selectedValue={this.state.nameSelectedState}
+                  selectedValue={this.getSelectedValue(info.item.key)}//{this.state[info.item.key]}//
                   onValueChange={(value) => this.onValueChange2(info.item.key,value)}
                 >
                 <Picker.Item label="NAME" value="0"/>
@@ -73,7 +86,7 @@ const mapStateToProps = state => {
 }
 const mapDistpatchToProps = dispatch => {
   return {
-    nameSelected: (nameId, dishId) => {
+    nameSelectedRed: (nameId, dishId) => {
       dispatch(nameSelected(nameId, dishId))
     }
   }

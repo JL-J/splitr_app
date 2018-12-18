@@ -10,8 +10,7 @@ const nameSelectedReducer = (state = initialState, action) => {
 		return {
 			...state,
 			nameSelected: Object.assign({}, state.nameSelected, {
-				key: action.payload.dishId,
-				value: action.payload.nameId
+				[action.payload.dishId]: action.payload.nameId
 			})
 		};
 	default:
