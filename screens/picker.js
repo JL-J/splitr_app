@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Button } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Form, Item, Picker,Icon } from 'native-base'
 import { connect } from 'react-redux';
 import ListItem from '../components/listItem';
@@ -11,34 +11,29 @@ export class PickerPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: "key1"
     };
-    this.getSelectedValue = this.getSelectedValue.bind(this)
+    this.getSelectedValue = this.getSelectedValue.bind(this);
+    this.onValueChange = this.onValueChange.bind(this);
   }
 
-  onValueChange2(key, value) {
-    // console.log(this.props.reduxstate);
-    this.props.nameSelectedRed(value, key); // redux
-    this.setState({ //compoennet state
+  onValueChange(key, value) {
+    this.props.nameSelectedRed(value, key);
+    this.setState({
       [key]: value
-    })
-    console.log(this.props.reduxstate);
-    // console.log(this.props.reduxstate);
-    //console.log(this.props.reduxstate,key, value);
+    });
    }
 
    getSelectedValue(key) {
-    // console.log(this.props.reduxstate);
-    // console.log('key',this.state[key]);
-    return this.props.nameSelectedState[key];
+    return this.state[key];
    }
 
   render() {
-    return (
+    var out = (
       <Container>
         <Header />
         <FlatList
           data = { this.props.dishes }
+          extraData={this.state}
           keyExtractor = {( item, index) => index.toString()}
           renderItem = { info => (
             <Content>
@@ -54,8 +49,8 @@ export class PickerPage extends React.Component {
                   placeholder="Person"
                   placeholderStyle={{ color: "#bfc6ea" }}
                   placeholderIconColor="#007aff"
-                  selectedValue={this.getSelectedValue(info.item.key)}//{this.state[info.item.key]}//
-                  onValueChange={(value) => this.onValueChange2(info.item.key,value)}
+                  selectedValue={this.getSelectedValue(info.item.key)}
+                  onValueChange={(value) => this.onValueChange(info.item.key,value)}
                 >
                 <Picker.Item label="NAME" value="0"/>
                 { this.props.peopleNames.map((item) =>
@@ -69,10 +64,16 @@ export class PickerPage extends React.Component {
               </Item>
             </Form>
           </Content>
-      )}
+         )}
+        />
+      <Button
+            title=">NEXT"
+            onPress={() => this.props.navigation.navigate('Summary')}
       />
       </Container>
     );
+    console.log(out);
+    return out;
   }
 }
 
