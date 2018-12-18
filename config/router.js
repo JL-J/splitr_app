@@ -2,14 +2,14 @@ import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 import AddDishes from '../screens/addDishes';
-import Home from '../screens/home';
+import AddNames from '../screens/addNames';
 import PickerPage from '../screens/picker';
 import AddTrip from '../screens/addTrip';
 
 const RootStack = createStackNavigator(
   {
     AddTrip: AddTrip,
-    AddNames: Home,
+    AddNames: AddNames,
     AddDishes: AddDishes,
     Picker: PickerPage
   },
