@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Home, { NameInput } from '../../screens/home';
+import AddNames, { NameInput } from '../../screens/addNames';
 
-describe('<Home />', function() {
+describe('<AddNames />', function() {
   it('should render without throwing error', function() {
-    const wrapper = shallow(<Home />);
+    const wrapper = shallow(<AddNames />);
     expect(wrapper.contains('Splitr')).toBe(true);
   });
 

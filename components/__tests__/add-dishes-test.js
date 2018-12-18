@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import Home, { AddDishes, NameInput } from '../../screens/addDishes';
+import AddNames, { AddDishes, NameInput } from '../../screens/addDishes';
 
 import renderer from 'react-test-renderer';
 
