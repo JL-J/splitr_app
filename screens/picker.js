@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Form, Picker } from 'native-base'
+import { Container, Header, Content, Text, Body, Title, Subtitle, Form, Picker } from 'native-base'
 import { connect } from 'react-redux';
 
 export class PickerPage extends React.Component {
@@ -23,10 +23,11 @@ export class PickerPage extends React.Component {
       <Container>
         <Header>
           <Body>
-            <Title>Who owes what?</Title>
+            <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
           </Body>
         </Header>
         <Content>
+          <Title style={{color:"black"}}>Who is responsible?</Title>
           <FlatList
             data = { this.props.dishes }
             keyExtractor = {( item, index) => index.toString()}
@@ -54,7 +55,9 @@ export class PickerPage extends React.Component {
 const mapStateToProps = state => {
   return {
     peopleNames: state.peopleNames.peopleNames,
-    dishes: state.dishes.dishes
+    dishes: state.dishes.dishes,
+    trips: state.trips.trips,
+    currentTrip: state.trips.currentTrip
   }
 }
 

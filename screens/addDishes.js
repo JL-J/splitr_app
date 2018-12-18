@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text, View , FlatList, Button } from 'react-native';
+import { FlatList } from 'react-native';
+import { Container, Header, Content, Text, Body, Title, Button } from 'native-base'
 import SubmitButton from '../components/submitButton'
+import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput'
 import PriceInput from '../components/priceInput'
 import ListReceipt from '../components/listReceipt'
@@ -54,37 +56,39 @@ class AddDishes extends React.Component {
   }
 
   render() {
-    return (
-      <View>
-        <View>
-          <Text>Add your Dish:</Text>
-          <NameInput
-            nameHandler = { this.dishNameChangeHandler }
-          />
-          <PriceInput
-            nameHandler = { this.dishPriceChangeHandler }
-          />
-          <SubmitButton
-            submitHandler = { this.orderSubmitHandler }
-          />
-        </View>
-        <View>
-          { this.namesOutput() }
-        </View>
-        <View>
-         <Button
-           title=">"
-           onPress={() => this.props.navigation.navigate('Picker')}
+   return (
+    <Container>
+      <Header>
+        <Body>
+          <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
+        </Body>
+      </Header>
+      <Content>
+        <Title style={{color:"black"}}>Tasks</Title>
+        <NameInput
+          nameHandler = { this.dishNameChangeHandler }
+        />
+        <PriceInput
+          nameHandler = { this.dishPriceChangeHandler }
+        />
+        <SubmitButton
+          submitHandler = { this.orderSubmitHandler }
+        />
+        { this.namesOutput() }
+         <NavigationButton
+           navigate = {() => this.props.navigation.navigate('Picker')}
          />
-       </View>
-      </View>
+      </Content>
+    </Container>
     );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes.dishes
+    dishes: state.dishes.dishes,
+    trips: state.trips.trips,
+    currentTrip: state.trips.currentTrip
   }
 }
 
