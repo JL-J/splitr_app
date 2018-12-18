@@ -21,7 +21,6 @@ class AddDishes extends React.Component {
       return;
     }
     let dish = { dishName: this.state.dishName, dishPrice: this.state.dishPrice };
-    // this.props.addPerson(this.state.dishName);
     this.props.addDish(dish)
   }
 
@@ -38,7 +37,6 @@ class AddDishes extends React.Component {
   }
 
   namesOutput = () => {
-    console.log(this.props.dishes)
     return (
       <FlatList
       data = { this.props.dishes }

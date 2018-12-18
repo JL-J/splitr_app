@@ -2,8 +2,9 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Form, Item, Picker,Icon } from 'native-base'
 import { connect } from 'react-redux';
-import ListReceipt from '../components/listReceipt'
+import ListItem from '../components/listItem';
 import PickerList from '../components/pickerList';
+import { nameSelected } from '../redux/actions/nameSelected';
 
 export class PickerPage extends React.Component {
 
@@ -12,13 +13,11 @@ export class PickerPage extends React.Component {
     this.state = {
       selected: "key1"
     };
-    console.log(this.props.peopleNames);
   }
 
-  onValueChange2(value: string) {
-     this.setState({
-       selected2: value
-     });
+  onValueChange2(key, value) {
+    console.log(this.reduxstate);
+    this.props.nameSelected(value, key);
    }
 
   render() {
@@ -30,19 +29,20 @@ export class PickerPage extends React.Component {
           keyExtractor = {( item, index) => index.toString()}
           renderItem = { info => (
             <Content>
-              <ListReceipt
-                dishName={ info.item.value.dishName }
+              <ListItem
+                personName={ info.item.value.dishName }
               />
               <Form>
               <Item picker>
                 <Picker
                   mode="dropdown"
+                  iosIcon={<Icon name="ios-arrow-dropdown" />}
                   style={{ width: undefined }}
                   placeholder="FOOD"
                   placeholderStyle={{ color: "#bfc6ea" }}
                   placeholderIconColor="#007aff"
-                  selectedValue={this.state.selected2}
-                  onValueChange={this.onValueChange2.bind(this)}
+                  selectedValue={this.state.nameSelectedState}
+                  onValueChange={(value) => this.onValueChange2(info.item.key,value)}
                 >
                 <Picker.Item label="NAME" value="0"/>
                 { this.props.peopleNames.map((item) =>
@@ -67,8 +67,15 @@ const mapStateToProps = state => {
   return {
     peopleNames: state.peopleNames.peopleNames,
     dishes: state.dishes.dishes,
+    nameSelectedState: state.nameSelected.nameSelected,
     reduxstate: state
   }
 }
-
-export default connect(mapStateToProps)(PickerPage);
+const mapDistpatchToProps = dispatch => {
+  return {
+    nameSelected: (nameId, dishId) => {
+      dispatch(nameSelected(nameId, dishId))
+    }
+  }
+}
+export default connect(mapStateToProps,mapDistpatchToProps)(PickerPage);
