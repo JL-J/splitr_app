@@ -74,6 +74,7 @@ class AddTrip extends React.Component {
 
   tripSubmitHandler = () => {
     if(this.state.tripName.trim() === '') {
+      Alert.alert(' Not submitted', 'Please enter trip name' )
       return;
     }
     let trip = {
@@ -83,7 +84,7 @@ class AddTrip extends React.Component {
       tripEndDate: this.state.tripEndDate,
     };
     this.props.addTrip(trip);
-    Alert.alert('Submitted', `${trip.tripName}`)
+    Alert.alert('Submitted', trip.tripName )
   }
 
 
