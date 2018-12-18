@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, TextInput } from 'react-native';
+import { FlatList, TextInput, Alert } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
@@ -31,19 +31,6 @@ class AddTrip extends React.Component {
     };
   }
 
-  tripSubmitHandler = () => {
-    if(this.state.tripName.trim() === '') {
-      return;
-    }
-    let trip = {
-      tripName: this.state.tripName,
-      tripLocation: this.state.tripLocation,
-      tripStartDate: this.state.tripStartDate,
-      tripEndDate: this.state.tripEndDate,
-    };
-    this.props.addTrip(trip);
-  }
-
   tripNameChangeHandler = (value) => {
     this.setState({
       tripName: value
@@ -68,21 +55,37 @@ class AddTrip extends React.Component {
     });
   }
 
-  // tripsOutput = () => {
-  //   return (
-  //     <FlatList
-  //     data = { this.props.trips }
-  //     keyExtractor = {( item, index) => index.toString()}
-  //     renderItem = { info => (
-  //       <ListTrip
-  //         tripName={ info.item.value.tripName }
-  //         tripLocation={ info.item.value.tripLocation }
-  //         tripDate={ info.item.value.tripDate }
-  //         />
-  //     )}
-  //     />
-  //   )
-  // }
+  tripsOutput = () => {
+    return (
+      <FlatList
+      data = { this.props.trips }
+      keyExtractor = {( item, index) => index.toString()}
+      renderItem = { info => (
+        <ListTrip
+          tripName={ info.item.value.tripName }
+          tripLocation={ info.item.value.tripLocation }
+          tripStartDate={ info.item.value.tripStartDate }
+          tripEndDate={ info.item.value.tripEndDate }
+          />
+      )}
+      />
+    )
+  }
+
+  tripSubmitHandler = () => {
+    if(this.state.tripName.trim() === '') {
+      return;
+    }
+    let trip = {
+      tripName: this.state.tripName,
+      tripLocation: this.state.tripLocation,
+      tripStartDate: this.state.tripStartDate,
+      tripEndDate: this.state.tripEndDate,
+    };
+    this.props.addTrip(trip);
+    Alert.alert('Submitted', `${trip.tripName}`)
+  }
+
 
   render() {
     return (
