@@ -13,7 +13,7 @@ state = {
   peopleNames: []
 }
 
-class Home extends React.Component {
+class AddNames extends React.Component {
 
   nameSubmitHandler = () => {
     if(this.state.personName.trim() === '') {
@@ -82,4 +82,4 @@ const mapDistpatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDistpatchToProps)(Home)
+export default connect(mapStateToProps, mapDistpatchToProps)(AddNames)
