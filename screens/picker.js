@@ -19,7 +19,7 @@ export class PickerPage extends React.Component {
    }
 
   dynamicPickerList() {
-    return ( this.props.peopleNames.map(name => {
+    return ( this.props.peopleNames.map((key, name) => {
        <Picker.Item label={name} value={name} />
     }));
   }
@@ -37,20 +37,22 @@ export class PickerPage extends React.Component {
             data = { this.props.dishes }
             keyExtractor = {( item, index) => index.toString()}
             renderItem = { info =>
+              <Form>
               <Text>{ info.item.value.dishName }  £{ info.item.value.dishPrice }</Text>
+              <Picker
+               style={{ width: 120, backgroundColor: "red" }}
+               placeholder="DropDown"
+               selectedValue={this.state.selected}
+               onValueChange={this.onValueChange.bind(this)}>
+               <Picker.Item label="TBD" value="test"/>
+                {
+                this.props.peopleNames.map( (name) =>
+                <Picker.Item key={name.key} label={name.value} value={name.value} />
+                )}
+              </Picker>
+              </Form>
             }
-          />
-          <Form>
-           <Picker
-             mode="dropdown"
-             style={{ width: 120 }}
-             selectedValue={this.state.selected}
-             onValueChange={this.onValueChange.bind(this)}>
-            { this.props.peopleNames.map( (name) => {
-              <Picker.Item label={name} value={name} />
-            })}
-            </Picker>
-            </Form>
+            />
         </Content>
       </Container>
     );
