@@ -1,9 +1,14 @@
+import nameReducer from '../../redux/reducers/nameReducer'
 import configureStore from '../../redux/store';
-import * from '../../redux/reducers';
-import * as actions from '../../redux/actions';
+import * as actions from '../../redux/actions/name';
 
 describe('nameReducer', () => {
-  it('should return the initial stats', () => {
-    expect(reducer)
+  it('should return the initial state', () => {
+    expect(nameReducer(undefined, {})).toEqual(
+      {
+      	personName: '',
+      	peopleNames: []
+      }
+    );
   });
 });
