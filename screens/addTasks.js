@@ -38,8 +38,13 @@ class AddTasks extends React.Component {
     });
   }
 
+  static navigationOptions = {
+  headerTitle: 'Tasks',
+  headerRight: (
+    <Button title='Next' onPress={() => alert('This is a button!')} />
+  )};
+
   namesOutput = () => {
-    console.log(this.props.tasks)
     return (
       <FlatList
       data = { this.props.tasks }
@@ -58,10 +63,9 @@ class AddTasks extends React.Component {
    return (
     <Container>
       <Header>
-        <Title>{this.props.currentTrip.tripName}</Title>
+        <Text>What needs to be done or bought for {this.props.currentTrip.tripName}?</Text>
       </Header>
       <Content>
-        <Title style={{color:"black"}}>Tasks</Title>
         <NameInput
           nameHandler = { this.taskNameChangeHandler }
         />
