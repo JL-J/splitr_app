@@ -21,5 +21,4 @@ const tripReducer = (state = initialState, action) => {
 	}
 };
 
-
 export default tripReducer;
