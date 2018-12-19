@@ -1,12 +1,12 @@
 import React from 'react';
-import { FlatList, TextInput, Alert } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker} from 'native-base';
+import { FlatList, TextInput, Alert} from 'react-native';
+import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker, Item, Form, Icon} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import Calendar from '../components/calendar'
 import ListTrip from '../components/listTrip';
 import { connect } from 'react-redux';
-import { addTrip } from '../redux/actions/trip'
+import { addTrip } from '../redux/actions/trip';
 
 state = {
   tripName: '',
@@ -56,15 +56,10 @@ class AddTrip extends React.Component {
   }
 
   static navigationOptions = {
-  headerTitle: "New Trip",
+  headerTitle: 'New Trip',
   headerRight: (
-    <Button
-      onPress={() => alert('This is a button!')}
-      title="Info"
-      color="#fff"
-    />
-    ),
-  };
+    <Button title='Next' onPress={() => alert('This is a button!')} />
+  )};
 
   tripsOutput = () => {
     return (
