@@ -22,9 +22,7 @@ export class PickerPage extends React.Component {
     return (
       <Container>
         <Header>
-          <Body>
-            <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
-          </Body>
+          <Title>{this.props.currentTrip.tripName}</Title>
         </Header>
         <Content>
           <Title style={{color:"black"}}>Who is responsible?</Title>

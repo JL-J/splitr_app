@@ -46,7 +46,7 @@ class AddNames extends React.Component {
     return (
       <Container>
         <Header>
-         <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
+         <Title>{this.props.currentTrip.tripName}</Title>
         </Header>
         <Content>
           <Title style={{color:"black"}}>Whos attending?</Title>
