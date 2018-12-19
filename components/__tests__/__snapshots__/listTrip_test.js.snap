@@ -24,10 +24,10 @@ exports[`<ListTrip /> renders the component correctly 1`] = `
       Location: 
     </Text>
     <Text>
-      Date: 
+      Start Date: 
     </Text>
     <Text>
-      Date: 
+      End Date: 
     </Text>
   </View>
 </View>
