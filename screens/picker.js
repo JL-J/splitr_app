@@ -27,13 +27,18 @@ export class PickerPage extends React.Component {
     return this.state[key];
    }
 
+   static navigationOptions = {
+   headerTitle: 'Assign Tasks',
+   headerRight: (
+     <Button title='Next?' onPress={() => alert('This is a button!')} />
+   )};
+
   render() {
     var out = (
       <Container>
-        <Header>
-          <Title>{this.props.currentTrip.tripName}</Title>
-        </Header>
-        <Title style={{color:"black"}}>Who is responsible?</Title>
+          <Header>
+            <Text>Who's responsible for each task for {this.props.currentTrip.tripName}?</Text>
+          </Header>
         <FlatList
           data = { this.props.tasks }
           extraData={this.state}
