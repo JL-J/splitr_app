@@ -5,5 +5,5 @@ import * as actions from '../../redux/actions';
 describe('nameReducer', () => {
   it('should return the initial stats', () => {
     expect(reducer)
-  })
-})
+  });
+});
