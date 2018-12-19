@@ -1,9 +1,6 @@
 import { ADD_TASK } from '../actions/types';
 
 const initialState = {
-  taskName: '',
-  taskPrice: '',
-  task: {},
   tasks: []
 }
 
@@ -13,7 +10,7 @@ const taskReducer = (state = initialState, action) => {
 		return {
 			...state,
 			tasks: state.tasks.concat({
-				key: Math.random(),
+				key: state.tasks.length,
 				value: action.payload
 			})
 		};
