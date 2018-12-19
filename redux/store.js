@@ -1,11 +1,11 @@
 import { createStore, combineReducers } from 'redux';
 import nameReducer from './reducers/nameReducer';
-import dishReducer from './reducers/dishReducer';
+import taskReducer from './reducers/taskReducer';
 import tripReducer from './reducers/tripReducer';
 
 const rootReducer = combineReducers({
 	peopleNames: nameReducer,
-	dishes: dishReducer,
+	tasks: taskReducer,
 	trips: tripReducer
 });
 

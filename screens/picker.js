@@ -27,10 +27,10 @@ export class PickerPage extends React.Component {
         <Content>
           <Title style={{color:"black"}}>Who is responsible?</Title>
           <FlatList
-            data = { this.props.dishes }
+            data = { this.props.tasks }
             keyExtractor = {( item, index) => index.toString()}
             renderItem = { info =>
-              <Text>{ info.item.value.dishName }  £{ info.item.value.dishPrice }</Text>
+              <Text>{ info.item.value.taskName }  £{ info.item.value.taskPrice }</Text>
             }
           />
           <Form>
@@ -53,7 +53,7 @@ export class PickerPage extends React.Component {
 const mapStateToProps = state => {
   return {
     peopleNames: state.peopleNames.peopleNames,
-    dishes: state.dishes.dishes,
+    tasks: state.tasks.tasks,
     trips: state.trips.trips,
     currentTrip: state.trips.currentTrip
   }

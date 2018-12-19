@@ -5,50 +5,49 @@ import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput'
 import PriceInput from '../components/priceInput'
-import ListReceipt from '../components/listReceipt'
+import ListTask from '../components/listTask'
 import { connect } from 'react-redux';
-import { addDish } from '../redux/actions/dish'
+import { addTask } from '../redux/actions/task'
 
 state = {
-  dishName: '',
-  dishPrice: '',
-  dish: {},
-  dishes: []
+  taskName: '',
+  taskPrice: '',
+  task: {},
+  tasks: []
 }
 
-class AddDishes extends React.Component {
+class AddTasks extends React.Component {
 
   orderSubmitHandler = () => {
-    if(this.state.dishName.trim() === '') {
+    if(this.state.taskName.trim() === '') {
       return;
     }
-    let dish = { dishName: this.state.dishName, dishPrice: this.state.dishPrice };
-    // this.props.addPerson(this.state.dishName);
-    this.props.addDish(dish)
+    let task = { taskName: this.state.taskName, taskPrice: this.state.taskPrice };
+    this.props.addTask(task)
   }
 
-  dishNameChangeHandler = (value) => {
+  taskNameChangeHandler = (value) => {
     this.setState({
-      dishName: value
+      taskName: value
     });
   }
 
-  dishPriceChangeHandler = (value) => {
+  taskPriceChangeHandler = (value) => {
     this.setState({
-      dishPrice: value
+      taskPrice: value
     });
   }
 
   namesOutput = () => {
-    console.log(this.props.dishes)
+    console.log(this.props.tasks)
     return (
       <FlatList
-      data = { this.props.dishes }
+      data = { this.props.tasks }
       keyExtractor = {( item, index) => index.toString()}
       renderItem = { info => (
-        <ListReceipt
-          dishName={ info.item.value.dishName }
-          price={ info.item.value.dishPrice }
+        <ListTask
+          taskName={ info.item.value.taskName }
+          price={ info.item.value.taskPrice }
         />
       )}
       />
@@ -64,10 +63,10 @@ class AddDishes extends React.Component {
       <Content>
         <Title style={{color:"black"}}>Tasks</Title>
         <NameInput
-          nameHandler = { this.dishNameChangeHandler }
+          nameHandler = { this.taskNameChangeHandler }
         />
         <PriceInput
-          nameHandler = { this.dishPriceChangeHandler }
+          nameHandler = { this.taskPriceChangeHandler }
         />
         <SubmitButton
           submitHandler = { this.orderSubmitHandler }
@@ -84,7 +83,7 @@ class AddDishes extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    dishes: state.dishes.dishes,
+    tasks: state.tasks.tasks,
     trips: state.trips.trips,
     currentTrip: state.trips.currentTrip
   }
@@ -92,10 +91,10 @@ const mapStateToProps = state => {
 
 const mapDistpatchToProps = dispatch => {
   return {
-    addDish: (dish) => {
-      dispatch(addDish(dish))
+    addTask: (task) => {
+      dispatch(addTask(task))
     }
   }
 }
 
-export default connect(mapStateToProps, mapDistpatchToProps)(AddDishes)
+export default connect(mapStateToProps, mapDistpatchToProps)(AddTasks)
