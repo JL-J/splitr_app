@@ -33,13 +33,13 @@ export class PickerPage extends React.Component {
         <Header>
           <Title>{this.props.currentTrip.tripName}</Title>
         </Header>
+        <Title style={{color:"black"}}>Who is responsible?</Title>
         <FlatList
           data = { this.props.tasks }
           extraData={this.state}
           keyExtractor = {( item, index) => index.toString()}
           renderItem = { info => (
             <Content>
-              <Title style={{color:"black"}}>Who is responsible?</Title>
               <ListItem
                 personName={ info.item.value.taskName }
               />

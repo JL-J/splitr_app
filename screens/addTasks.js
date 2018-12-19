@@ -47,7 +47,7 @@ class AddTasks extends React.Component {
       renderItem = { info => (
         <ListTask
           taskName={ info.item.value.taskName }
-          price={ info.item.value.taskPrice }
+          taskPrice={ info.item.value.taskPrice }
         />
       )}
       />
