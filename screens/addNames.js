@@ -42,14 +42,24 @@ class AddNames extends React.Component {
     )
   }
 
+  static navigationOptions = {
+  headerTitle: "Guests",
+  headerRight: (
+    <Button
+      onPress={() => alert('This is a button!')}
+      title="Info"
+      color="#fff"
+    />
+    ),
+  };
+
   render() {
     return (
       <Container>
         <Header>
-         <Title>{this.props.currentTrip.tripName}</Title>
+        <Text>Who's going to {this.props.currentTrip.tripName}?</Text>
         </Header>
         <Content>
-          <Title style={{color:"black"}}>Whos attending?</Title>
           <NameInput
             nameHandler = { this.personNameChangeHandler }
           />
