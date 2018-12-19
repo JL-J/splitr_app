@@ -11,7 +11,7 @@ describe('<ListTrip />', function() {
     expect(snap).toMatchSnapshot();
   });
 
-  it('renders one text input component', () => {
+  it('renders four text input components', () => {
     const wrapper = shallow(<ListTrip />);
     expect(wrapper.find(Text)).toHaveLength(4);
   });
