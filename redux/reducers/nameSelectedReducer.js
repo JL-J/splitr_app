@@ -1,7 +1,7 @@
 import { SELECT_NAME_TO_DISH } from '../actions/types';
 
 const initialState = {
-  nameSelected: {}
+	nameSelected: {}
 }
 
 const nameSelectedReducer = (state = initialState, action) => {
