@@ -11,7 +11,7 @@ describe('<ListTask />', function() {
     expect(snap).toMatchSnapshot();
   });
 
-  it('renders two name input component', () => {
+  it('renders two text input component', () => {
     const wrapper = shallow(<ListTask />);
     expect(wrapper.find(Text)).toHaveLength(2);
   });
