@@ -55,6 +55,17 @@ class AddTrip extends React.Component {
     });
   }
 
+  static navigationOptions = {
+  headerTitle: "New Trip",
+  headerRight: (
+    <Button
+      onPress={() => alert('This is a button!')}
+      title="Info"
+      color="#fff"
+    />
+    ),
+  };
+
   tripsOutput = () => {
     return (
       <FlatList
@@ -91,11 +102,9 @@ class AddTrip extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Body>
-            <Title>Trip details</Title>
-          </Body>
-        </Header>
+      <Header>
+      <Text>Enter the details of your event or trip:</Text>
+      </Header>
         <Content>
           <TextInput
             onChangeText = { this.tripNameChangeHandler.bind(this)}
