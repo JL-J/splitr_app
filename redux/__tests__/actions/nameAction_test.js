@@ -1,11 +1,14 @@
 import configureStore from 'redux-mock-store';
-import addName from '../../actions/name';
+import { addName } from '../../actions/name';
+import { ADD_NAME } from '../../actions/types';
+
+const expectedActions = {
+  type: ADD_NAME,
+  payload: 'Bill'
+}
 
 describe('addName', () => {
-  it('creates an action to add a name', () => {
-    expect(addName('Bill')).toEqual({
-      type: 'ADD_NAME',
-      payload: 'Bill'
-    });
+  it('exports an action to add a name', () => {
+    expect(addName('Bill')).toEqual(expectedActions);
   });
 });
