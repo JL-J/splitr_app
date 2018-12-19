@@ -1,6 +1,6 @@
-import tripReducer from '../reducers/tripReducer'
-import configureStore from '../store';
-import * as actions from '../actions/trip';
+import tripReducer from '../../reducers/tripReducer'
+import configureStore from '../../store';
+import * as actions from '../../actions/trip';
 
 describe('tripReducer', () => {
   it('returns initial state', () => {
