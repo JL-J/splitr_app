@@ -59,9 +59,7 @@ class AddDishes extends React.Component {
    return (
     <Container>
       <Header>
-        <Body>
-          <Title>{this.props.currentTrip.tripName}, {this.props.currentTrip.tripLocation}</Title>
-        </Body>
+        <Title>{this.props.currentTrip.tripName}</Title>
       </Header>
       <Content>
         <Title style={{color:"black"}}>Tasks</Title>
