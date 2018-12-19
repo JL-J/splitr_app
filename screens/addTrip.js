@@ -1,7 +1,9 @@
 import React from 'react';
-// import { Container, Header, Content, Text, Body, Title, Form, Picker } from 'native-base'
-import { Text, View , FlatList, TextInput, Button } from 'react-native';
-import { DatePicker} from 'native-base';
+import { FlatList, TextInput, Alert } from 'react-native';
+import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker} from 'native-base';
+import SubmitButton from '../components/submitButton'
+import NavigationButton from '../components/navigationButton'
+import Calendar from '../components/calendar'
 import ListTrip from '../components/listTrip';
 import { connect } from 'react-redux';
 import { addTrip } from '../redux/actions/trip'
@@ -9,7 +11,8 @@ import { addTrip } from '../redux/actions/trip'
 state = {
   tripName: '',
 	tripLocation: '',
-  tripDate: new Date(),
+  tripStartDate: new Date(),
+  tripEndDate: new Date(),
   currentTrip: {},
   trips: []
 }
@@ -21,22 +24,11 @@ class AddTrip extends React.Component {
     this.state = {
       tripName: '',
       tripLocation: '',
-      tripDate: new Date(),
+      tripStartDate: new Date(),
+      tripEndDate: new Date(),
       currentTrip: {},
       trips: []
     };
-  }
-
-  tripSubmitHandler = () => {
-    if(this.state.tripName.trim() === '') {
-      return;
-    }
-    let trip = {
-      tripName: this.state.tripName,
-      tripLocation: this.state.tripLocation,
-      tripDate: this.state.tripDate
-    };
-    this.props.addTrip(trip);
   }
 
   tripNameChangeHandler = (value) => {
@@ -51,9 +43,15 @@ class AddTrip extends React.Component {
     });
   }
 
-  tripDateChangeHandler = (value) => {
+  tripStartDateChangeHandler = (value) => {
     this.setState({
-      tripDate: value
+      tripStartDate: value
+    });
+  }
+
+  tripEndDateChangeHandler = (value) => {
+    this.setState({
+      tripEndDate: value
     });
   }
 
@@ -66,56 +64,65 @@ class AddTrip extends React.Component {
         <ListTrip
           tripName={ info.item.value.tripName }
           tripLocation={ info.item.value.tripLocation }
-          tripDate={ info.item.value.tripDate }
+          tripStartDate={ info.item.value.tripStartDate }
+          tripEndDate={ info.item.value.tripEndDate }
           />
       )}
       />
     )
   }
 
+  tripSubmitHandler = () => {
+    if(this.state.tripName.trim() === '') {
+      Alert.alert(' Not submitted', 'Please enter trip name' )
+      return;
+    }
+    let trip = {
+      tripName: this.state.tripName,
+      tripLocation: this.state.tripLocation,
+      tripStartDate: this.state.tripStartDate,
+      tripEndDate: this.state.tripEndDate,
+    };
+    this.props.addTrip(trip);
+    Alert.alert('Submitted', trip.tripName )
+  }
+
+
   render() {
     return (
-        <View>
-          <View>
-            <Text>Add your trip details</Text>
-            <TextInput
-              onChangeText = { this.tripNameChangeHandler.bind(this)}
-              style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-              placeholder="Trip Name"
-            />
-            <TextInput
-              onChangeText = { this.tripLocationChangeHandler.bind(this)}
-              style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-              placeholder="Location"
-            />
-            <Text>Date:</Text>
-            <DatePicker
-              defaultDate={new Date()}
-              minimumDate={new Date(2018, 1, 1)}
-              maximumDate={new Date(2020, 12, 31)}
-              locale={"en"}
-              timeZoneOffsetInMinutes={undefined}
-              modalTransparent={false}
-              animationType={"fade"}
-              androidMode={"default"}
-              placeHolderText="Select date"
-              textStyle={{ color: "green" }}
-              placeHolderTextStyle={{ color: "#d3d3d3" }}
-              onDateChange={this.tripDateChangeHandler.bind(this)}
-            />
-            <Button
-              onPress = {this.tripSubmitHandler}
-              title="Submit"
-              color="#841584"
-            />
-          </View>
-          <View>
-            <Button
-            title=">"
-            onPress={() => this.props.navigation.navigate('AddNames')}
+      <Container>
+        <Header>
+          <Body>
+            <Title>Trip details</Title>
+          </Body>
+        </Header>
+        <Content>
+          <TextInput
+            onChangeText = { this.tripNameChangeHandler.bind(this)}
+            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+            placeholder="Trip Name"
           />
-          </View>
-        </View>
+          <TextInput
+            onChangeText = { this.tripLocationChangeHandler.bind(this)}
+            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+            placeholder="Location"
+          />
+          <Text>Start Date:</Text>
+          <Calendar
+            onDateChangeHandler = {this.tripStartDateChangeHandler.bind(this)}
+          />
+          <Text>End Date:</Text>
+          <Calendar
+            onDateChangeHandler = {this.tripEndDateChangeHandler.bind(this)}
+          />
+          <SubmitButton
+            submitHandler =  {this.tripSubmitHandler}
+          />
+          <NavigationButton
+            navigate = {() => this.props.navigation.navigate('AddNames')}
+          />
+        </Content>
+      </Container>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Button } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Form, Item, Picker,Icon } from 'native-base'
+import { Container, Header, Content, Text, Body, Title, Subtitle, Item, Form, Picker, Icon } from 'native-base'
 import { connect } from 'react-redux';
 import ListItem from '../components/listItem';
 import PickerList from '../components/pickerList';
@@ -30,15 +30,18 @@ export class PickerPage extends React.Component {
   render() {
     var out = (
       <Container>
-        <Header />
+        <Header>
+          <Title>{this.props.currentTrip.tripName}</Title>
+        </Header>
         <FlatList
-          data = { this.props.dishes }
+          data = { this.props.tasks }
           extraData={this.state}
           keyExtractor = {( item, index) => index.toString()}
           renderItem = { info => (
             <Content>
+              <Title style={{color:"black"}}>Who is responsible?</Title>
               <ListItem
-                personName={ info.item.value.dishName }
+                personName={ info.item.value.taskName }
               />
               <Form>
               <Item picker>
@@ -80,9 +83,10 @@ export class PickerPage extends React.Component {
 const mapStateToProps = state => {
   return {
     peopleNames: state.peopleNames.peopleNames,
-    dishes: state.dishes.dishes,
-    nameSelectedState: state.nameSelected.nameSelected,
-    reduxstate: state
+    tasks: state.tasks.tasks,
+    trips: state.trips.trips,
+    currentTrip: state.trips.currentTrip,
+    nameSelectedState: state.nameSelected.nameSelected
   }
 }
 const mapDistpatchToProps = dispatch => {

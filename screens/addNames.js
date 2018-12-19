@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View , FlatList, Button } from 'react-native';
-import { Header, Container} from 'native-base'
+import { Text, View , FlatList } from 'react-native';
+import { Header, Container, Content, Button, Title, Subtitle} from 'native-base'
 import SubmitButton from '../components/submitButton';
+import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput';
 import ListItem from '../components/listItem';
 import { connect } from 'react-redux';
@@ -12,7 +13,7 @@ state = {
   peopleNames: []
 }
 
-class Home extends React.Component {
+class AddNames extends React.Component {
 
   nameSubmitHandler = () => {
     if(this.state.personName.trim() === '') {
@@ -45,29 +46,21 @@ class Home extends React.Component {
     return (
       <Container>
         <Header>
-              <Text>{this.props.currentTrip.tripName}, </Text>
-              <Text>{this.props.currentTrip.tripLocation}</Text>
+         <Title>{this.props.currentTrip.tripName}</Title>
         </Header>
-        <View>
-          <View>
-            <Text>Add participiants</Text>
-            <NameInput
-              nameHandler = { this.personNameChangeHandler }
-            />
-            <SubmitButton
-              submitHandler = { this.nameSubmitHandler }
-            />
-          </View>
-          <View>
-            { this.namesOutput() }
-          </View>
-          <View>
-            <Button
-              title=">"
-              onPress={() => this.props.navigation.navigate('AddDishes')}
-            />
-          </View>
-        </View>
+        <Content>
+          <Title style={{color:"black"}}>Whos attending?</Title>
+          <NameInput
+            nameHandler = { this.personNameChangeHandler }
+          />
+          <SubmitButton
+            submitHandler = { this.nameSubmitHandler }
+          />
+          { this.namesOutput() }
+          <NavigationButton
+            navigate = {() => this.props.navigation.navigate('AddTasks')}
+          />
+        </Content>
       </Container>
     );
   }
@@ -89,4 +82,4 @@ const mapDistpatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDistpatchToProps)(Home)
+export default connect(mapStateToProps, mapDistpatchToProps)(AddNames)
