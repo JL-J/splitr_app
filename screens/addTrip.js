@@ -103,6 +103,7 @@ class AddTrip extends React.Component {
     return (
       <Container>
       <Header>
+      <Title> 🌎 </Title>
       <Text>Enter the details of your event or trip:</Text>
       </Header>
         <Content>
