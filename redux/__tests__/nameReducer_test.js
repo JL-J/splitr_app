@@ -11,7 +11,7 @@ describe('nameReducer', () => {
     );
   });
 
-  it('adds new name to peopleNames', () => {
+  it('adds names', () => {
     expect(nameReducer({
       peopleNames: []
     }, {
@@ -19,6 +19,20 @@ describe('nameReducer', () => {
       payload: 'Bill'
     })).toEqual({
       peopleNames: [{'key': 0, 'value': 'Bill'}]
+    });
+  });
+
+  it('can add multiple names', () => {
+    expect(nameReducer({
+      peopleNames: [{'key': 0, 'value': 'Bill'}]
+    }, {
+      type: 'ADD_NAME',
+      payload: 'Jude'
+    })).toEqual({
+      peopleNames: [
+        {'key': 0, 'value': 'Bill'},
+        {'key': 1, 'value': 'Jude'},
+      ]
     });
   });
 });
