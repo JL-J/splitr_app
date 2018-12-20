@@ -122,10 +122,6 @@ class AddTrip extends React.Component {
           <SubmitButton
             submitHandler =  {this.tripSubmitHandler}
           />
-          <Button
-            title="Next"
-            onPress = {() => this.props.navigation.navigate('AddNames')}
-          />
         </Content>
       </Container>
     );
