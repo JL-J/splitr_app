@@ -1,18 +1,17 @@
-# Splitr - split the tasks... not your friendships
+# Splitr
+## Split responsibilities, not your friendships
 
-Big tasks often require division of labour. A lack of organisation can cause total chaos. Splitr is a simple way to split up tasks between a group of friends, in preparation for an event.
+Big tasks often require division of labour. A lack of organisation can cause total chaos. Splitr is a simple way to split up tasks between a group of friends in preparation for an event such as a group holiday, hen/stag party or camping trip.
 
 ## Getting started
-To get run a simulation of Splitr on your computer you'll need to download Xcode (iPhone simulator) and/or Android Studio (Android emulator). Please note this may take a few minutes.
+To get run a simulation of Splitr on your Mac you'll need to download Xcode (iPhone simulator) and/or Android Studio with Java Development Kit (Android emulator). Full instructions of how to set up the simulators can be found [here](https://facebook.github.io/react-native/docs/getting-started.html) Please note this may take a few minutes.
 
 Once you've downloaded one or both programs, clone this repo and run the following command:
 `npm install`
 
 For the iPhone simulator, open the `ios` folder of this program in Xcode and press the "play" button.
 
-For the Android simulator, run the following commands in two separate terminals:
-`npm start`
-`react-native run-android`
+For the Android simulator, run the following commands in two separate terminals: `react-native run-android`
 
 
 ## To run tests
@@ -68,7 +67,7 @@ I would like to see a summary page
 
 
 ## Tech Team
-[Jude Lloyd-Jones](https://github.com/JL-J)
-[Bill Muxworthy](https://github.com/BillMux/)
-[Reka Pap](https://github.com/rekapap)
-[Raylene Smith](https://github.com/rsmith88)
+* [Jude Lloyd-Jones](https://github.com/JL-J)
+* [Bill Muxworthy](https://github.com/BillMux/)
+* [Reka Pap](https://github.com/rekapap)
+* [Raylene Smith](https://github.com/rsmith88)
