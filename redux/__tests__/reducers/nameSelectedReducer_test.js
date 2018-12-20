@@ -10,4 +10,20 @@ describe('nameReducer', () => {
       }
     );
   });
+
+  it('assign names to tasks', () => {
+    expect(nameSelectedReducer({
+      nameSelected: {}
+    }, {
+      type: 'SELECT_NAME_TO_TASK',
+      payload: {
+        nameId: 0,
+        taskId: 0
+      }
+    })).toEqual({
+      nameSelected: {
+        "0": 0
+      }
+    })
+  })
 });
