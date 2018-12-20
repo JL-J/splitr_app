@@ -1,5 +1,7 @@
 # Splitr - split the bill... not your friendships
 
+
+
 ## Getting started
 To get run a simulation of Splitr on your computer you'll need to download Xcode (Iphone simulator) and/or Android Studio (Android emulator). Please note this may take a few minutes.
 
@@ -72,7 +74,7 @@ I want to see the total amount each diner owes
 
 
 ## Tech Team
-Jude Lloyd-Jones
-Bill Muxworthy
-Reka Pap
-Raylene Smith
+[Jude Lloyd-Jones](https://github.com/JL-J)
+[Bill Muxworthy](https://github.com/BillMux/)
+[Reka Pap](https://github.com/rekapap)
+[Raylene Smith](https://github.com/rsmith88)
