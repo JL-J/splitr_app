@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View , FlatList } from 'react-native';
-import { Header, Container, Content, Button, Title, Subtitle} from 'native-base'
+import { Text, View , FlatList, Button } from 'react-native';
+import { Header, Container, Content,Title, Subtitle} from 'native-base'
 import SubmitButton from '../components/submitButton';
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput';
@@ -42,14 +42,19 @@ class AddNames extends React.Component {
     )
   }
 
+  static navigationOptions = ({ navigation, screenProps }) => ({
+  headerTitle: 'Guests',
+  headerRight:
+    <Button title='Next' onPress = {() => navigation.navigate('AddTasks')} />
+  });
+
   render() {
     return (
       <Container>
         <Header>
-         <Title>{this.props.currentTrip.tripName}</Title>
+        <Text>Who's going to {this.props.currentTrip.tripName}?</Text>
         </Header>
         <Content>
-          <Title style={{color:"black"}}>Whos attending?</Title>
           <NameInput
             nameHandler = { this.personNameChangeHandler }
           />
@@ -57,9 +62,6 @@ class AddNames extends React.Component {
             submitHandler = { this.nameSubmitHandler }
           />
           { this.namesOutput() }
-          <NavigationButton
-            navigate = {() => this.props.navigation.navigate('AddTasks')}
-          />
         </Content>
       </Container>
     );

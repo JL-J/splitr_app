@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Button } from 'native-base'
+import { FlatList, Button } from 'react-native';
+import { Container, Header, Content, Text, Body, Title } from 'native-base'
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput'
@@ -38,8 +38,13 @@ class AddTasks extends React.Component {
     });
   }
 
+  static navigationOptions = ({ navigation, screenProps }) => ({
+  headerTitle: 'Tasks',
+  headerRight:
+    <Button title='Next' onPress = {() => navigation.navigate('Picker')} />
+  });
+
   namesOutput = () => {
-    console.log(this.props.tasks)
     return (
       <FlatList
       data = { this.props.tasks }
@@ -58,10 +63,9 @@ class AddTasks extends React.Component {
    return (
     <Container>
       <Header>
-        <Title>{this.props.currentTrip.tripName}</Title>
+        <Text>What needs to be done or bought for {this.props.currentTrip.tripName}?</Text>
       </Header>
       <Content>
-        <Title style={{color:"black"}}>Tasks</Title>
         <NameInput
           nameHandler = { this.taskNameChangeHandler }
         />
@@ -72,9 +76,6 @@ class AddTasks extends React.Component {
           submitHandler = { this.orderSubmitHandler }
         />
         { this.namesOutput() }
-         <NavigationButton
-           navigate = {() => this.props.navigation.navigate('Picker')}
-         />
       </Content>
     </Container>
     );
