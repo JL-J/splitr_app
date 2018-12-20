@@ -105,6 +105,9 @@ export class PickerPage extends React.Component {
           </Content>
          )}
         />
+        <SubmitButton
+        submitHandler =  {this.pickSubmitHandler}
+      />
       </Container>
     );
   }
