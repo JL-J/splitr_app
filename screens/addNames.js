@@ -62,9 +62,6 @@ class AddNames extends React.Component {
             submitHandler = { this.nameSubmitHandler }
           />
           { this.namesOutput() }
-          <NavigationButton
-            navigate = {() => this.props.navigation.navigate('AddTasks')}
-          />
         </Content>
       </Container>
     );
