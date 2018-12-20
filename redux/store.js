@@ -3,12 +3,14 @@ import nameReducer from './reducers/nameReducer';
 import taskReducer from './reducers/taskReducer';
 import tripReducer from './reducers/tripReducer';
 import nameSelectedReducer from './reducers/nameSelectedReducer';
+import assignTaskReducer from './reducers/assignTasksReducer';
 
 const rootReducer = combineReducers({
 	peopleNames: nameReducer,
 	tasks: taskReducer,
 	trips: tripReducer,
-	nameSelected: nameSelectedReducer
+	nameSelected: nameSelectedReducer,
+	assignTasks: assignTaskReducer
 });
 
 const configureStore = () => {

@@ -39,7 +39,6 @@ class AddTasks extends React.Component {
   }
 
   namesOutput = () => {
-    console.log(this.props.tasks)
     return (
       <FlatList
       data = { this.props.tasks }
