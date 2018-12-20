@@ -1,12 +1,12 @@
 import { ADD_TASK } from '../actions/types';
 
 const initialState = {
-  tasks: []
-}
+	tasks: []
+};
 
 const taskReducer = (state = initialState, action) => {
 	switch(action.type) {
-		case ADD_TASK:
+	case ADD_TASK:
 		return {
 			...state,
 			tasks: state.tasks.concat({
