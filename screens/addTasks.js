@@ -76,9 +76,6 @@ class AddTasks extends React.Component {
           submitHandler = { this.orderSubmitHandler }
         />
         { this.namesOutput() }
-         <NavigationButton
-           navigate = {() => this.props.navigation.navigate('Picker')}
-         />
       </Content>
     </Container>
     );
