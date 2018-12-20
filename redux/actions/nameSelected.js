@@ -1,8 +1,8 @@
-import { SELECT_NAME_TO_DISH } from './types';
-
-export const nameSelected = (nameId, dishId) => {
+import { SELECT_NAME_TO_TASK } from './types';
+// CHANGED DISH TO TASK HERE AND IN '../reducers/nameSelectedReducer'
+export const nameSelected = (nameId, taskId) => {
 	return {
-		type: SELECT_NAME_TO_DISH,
-		payload: { nameId, dishId }
+		type: SELECT_NAME_TO_TASK,
+		payload: { nameId, taskId }
 	};
 };

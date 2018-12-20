@@ -7,7 +7,8 @@ const ListTrip = (props) => {
         <View>
           <Text>Name: { props.tripName }</Text>
           <Text>Location: { props.tripLocation }</Text>
-          <Text>Date: { props.tripDate }</Text>
+          <Text>Start Date: { props.tripStartDate }</Text>
+          <Text>End Date: { props.tripEndDate }</Text>
         </View>
       </TouchableOpacity>
     );
