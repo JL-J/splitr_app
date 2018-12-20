@@ -12,7 +12,7 @@ const tripReducer = (state = initialState, action) => {
 			...state,
 			currentTrip: Object.assign({}, action.payload),
 			trips: state.trips.concat({
-				key: Math.random(),
+				key: state.trips.length,
 				value: action.payload
 			})
 		};
@@ -20,6 +20,5 @@ const tripReducer = (state = initialState, action) => {
 		return state;
 	}
 };
-
 
 export default tripReducer;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ListTrip /> renders the component correctly 1`] = `
+<View
+  accessible={true}
+  isTVSelectable={true}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "opacity": 1,
+    }
+  }
+>
+  <View>
+    <Text>
+      Name: 
+    </Text>
+    <Text>
+      Location: 
+    </Text>
+    <Text>
+      Start Date: 
+    </Text>
+    <Text>
+      End Date: 
+    </Text>
+  </View>
+</View>
+`;
