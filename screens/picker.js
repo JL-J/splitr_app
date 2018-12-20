@@ -3,23 +3,24 @@ import { FlatList, Button } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Subtitle, Item, Form, Picker, Icon } from 'native-base'
 import { connect } from 'react-redux';
 import ListItem from '../components/listItem';
-import PickerList from '../components/pickerList';
 import { nameSelected } from '../redux/actions/nameSelected';
+import { assignTasks } from '../redux/actions/assignTasks';
+import SubmitButton from '../components/submitButton';
 
 export class PickerPage extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-    };
+    this.state = {};
     this.getSelectedValue = this.getSelectedValue.bind(this);
     this.onValueChange = this.onValueChange.bind(this);
+    this.pickSubmitHandler = this.pickSubmitHandler.bind(this);
   }
 
   onValueChange(key, value) {
     this.props.nameSelectedRed(value, key);
     this.setState({
-      [key]: value
+      [key]: value // taskId, name
     });
    }
 
@@ -33,8 +34,38 @@ export class PickerPage extends React.Component {
      <Button title='Next' onPress = {() => navigation.navigate('Summary')} />
    });
 
+   pickSubmitHandler() {
+      let names = this.props.peopleNames;
+      let selected = this.state;
+      let data = [];
+
+      for (var key in names) {
+        data.push({ name: names[key], tasks:[] });
+      }
+
+      let dataLength = data.length;
+
+      for (var taskId in selected) {
+        for (var i = 0; i < dataLength; i++) {
+          let item = data[i]
+          if (item['name']['value'] == selected[taskId]) {
+            let tasks = this.props.tasks;
+            let currentTask;
+            let taskLength = tasks.length;
+            for (var index = 0; index < taskLength; index++){
+               if (tasks[index]['key'] == taskId) {
+                 currentTask = tasks[index];
+               }
+            }
+            data[i]['tasks'].push(currentTask);
+          }
+        }
+      }
+     this.props.assignTasks(data);
+   }
+
   render() {
-    var out = (
+    return (
       <Container>
           <Header>
             <Text>Who's responsible for each task for {this.props.currentTrip.tripName}?</Text>
@@ -76,8 +107,6 @@ export class PickerPage extends React.Component {
         />
       </Container>
     );
-    console.log(out);
-    return out;
   }
 }
 
@@ -94,6 +123,9 @@ const mapDistpatchToProps = dispatch => {
   return {
     nameSelectedRed: (nameId, dishId) => {
       dispatch(nameSelected(nameId, dishId))
+    },
+    assignTasks: (data) => {
+      dispatch(assignTasks(data))
     }
   }
 }

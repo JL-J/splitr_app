@@ -3,7 +3,6 @@ import { TextInput } from 'react-native';
 
 export default class PriceInput extends React.Component {
 
-
   render() {
     return (
       <TextInput

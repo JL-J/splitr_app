@@ -1,7 +1,6 @@
 import { ADD_NAME } from '../actions/types';
 
 const initialState = {
-	personName: '',
 	peopleNames: []
 };
 
@@ -11,7 +10,7 @@ const nameReducer = (state = initialState, action) => {
 		return {
 			...state,
 			peopleNames: state.peopleNames.concat({
-				key: Math.random(),
+				key: state.peopleNames.length,
 				value: action.payload
 			})
 		};
