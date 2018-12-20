@@ -27,11 +27,11 @@ export class PickerPage extends React.Component {
     return this.state[key];
    }
 
-   static navigationOptions = {
-   headerTitle: 'Assign Tasks',
-   headerRight: (
-     <Button title='Next?' onPress={() => alert('This is a button!')} />
-   )};
+   static navigationOptions = ({ navigation, screenProps }) => ({
+   headerTitle: 'Tasks',
+   headerRight:
+     <Button title='Next' onPress = {() => navigation.navigate('Summary')} />
+   });
 
   render() {
     var out = (
