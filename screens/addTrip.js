@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList, TextInput, Alert} from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Subtitle, Button, DatePicker, Item, Form, Icon} from 'native-base';
+import { FlatList, TextInput, Alert, Button } from 'react-native';
+import { Container, Header, Content, Text, Body, Title, Subtitle, DatePicker, Item, Form, Icon} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import Calendar from '../components/calendar'
@@ -55,12 +55,6 @@ class AddTrip extends React.Component {
     });
   }
 
-  static navigationOptions = {
-  headerTitle: 'New Trip',
-  headerRight: (
-    <Button title='Next' onPress={() => alert('This is a button!')} />
-  )};
-
   tripsOutput = () => {
     return (
       <FlatList
@@ -93,6 +87,11 @@ class AddTrip extends React.Component {
     Alert.alert('Submitted', trip.tripName )
   }
 
+  static navigationOptions = ({ navigation, screenProps }) => ({
+  headerTitle: 'New Trip',
+  headerRight:
+    <Button title='Next' onPress = {() => navigation.navigate('AddNames')} />
+  });
 
   render() {
     return (
@@ -123,8 +122,9 @@ class AddTrip extends React.Component {
           <SubmitButton
             submitHandler =  {this.tripSubmitHandler}
           />
-          <NavigationButton
-            navigate = {() => this.props.navigation.navigate('AddNames')}
+          <Button
+            title="Next"
+            onPress = {() => this.props.navigation.navigate('AddNames')}
           />
         </Content>
       </Container>
