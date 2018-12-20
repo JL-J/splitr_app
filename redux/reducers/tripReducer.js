@@ -1,13 +1,13 @@
 import { ADD_TRIP } from '../actions/types';
 
 const initialState = {
-  currentTrip: {},
-  trips: []
-}
+	currentTrip: {},
+	trips: []
+};
 
 const tripReducer = (state = initialState, action) => {
 	switch(action.type) {
-		case ADD_TRIP:
+	case ADD_TRIP:
 		return {
 			...state,
 			currentTrip: Object.assign({}, action.payload),
