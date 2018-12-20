@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlatList } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Button } from 'native-base'
+import { FlatList, Button } from 'react-native';
+import { Container, Header, Content, Text, Body, Title } from 'native-base'
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput'
@@ -38,11 +38,11 @@ class AddTasks extends React.Component {
     });
   }
 
-  static navigationOptions = {
+  static navigationOptions = ({ navigation, screenProps }) => ({
   headerTitle: 'Tasks',
-  headerRight: (
-    <Button title='Next' onPress={() => alert('This is a button!')} />
-  )};
+  headerRight:
+    <Button title='Next' onPress = {() => navigation.navigate('Picker')} />
+  });
 
   namesOutput = () => {
     return (
