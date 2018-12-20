@@ -7,15 +7,15 @@ import PickerPage from '../screens/picker';
 import AddTrip from '../screens/addTrip';
 
 const RootStack = createStackNavigator(
-  {
-    AddTrip: AddTrip,
-    AddNames: AddNames,
-    AddTasks: AddTasks,
-    Picker: PickerPage
-  },
-  {
-    initialRouteName: "AddTrip"
-  }
+	{
+		AddTrip: AddTrip,
+		AddNames: AddNames,
+		AddTasks: AddTasks,
+		Picker: PickerPage
+	},
+	{
+		initialRouteName: 'AddTrip'
+	}
 );
 
 export const AppContainer = createAppContainer(RootStack);
