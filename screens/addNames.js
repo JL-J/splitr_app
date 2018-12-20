@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View , FlatList } from 'react-native';
-import { Header, Container, Content, Button, Title, Subtitle} from 'native-base'
+import { Text, View , FlatList, Button } from 'react-native';
+import { Header, Container, Content,Title, Subtitle} from 'native-base'
 import SubmitButton from '../components/submitButton';
 import NavigationButton from '../components/navigationButton'
 import NameInput from '../components/nameInput';
@@ -42,16 +42,11 @@ class AddNames extends React.Component {
     )
   }
 
-  static navigationOptions = {
-  headerTitle: "Guests",
-  headerRight: (
-    <Button
-      onPress={() => alert('This is a button!')}
-      title="Info"
-      color="#fff"
-    />
-    ),
-  };
+  static navigationOptions = ({ navigation, screenProps }) => ({
+  headerTitle: 'Guests',
+  headerRight:
+    <Button title='Next' onPress = {() => navigation.navigate('AddTasks')} />
+  });
 
   render() {
     return (
