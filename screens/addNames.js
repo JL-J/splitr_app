@@ -1,10 +1,11 @@
 import React from 'react';
-import { Text, View , FlatList, Button } from 'react-native';
+import { Text, View , FlatList, Button, StyleSheet } from 'react-native';
 import { Header, Container, Content,Title, Subtitle} from 'native-base'
 import SubmitButton from '../components/submitButton';
 import NavigationButton from '../components/navigationButton'
-import NameInput from '../components/nameInput';
 import ListItem from '../components/listItem';
+import HeaderBanner from '../components/header';
+import Input from '../components/input';
 import { connect } from 'react-redux';
 import { addName } from '../redux/actions/name';
 
@@ -35,8 +36,8 @@ class AddNames extends React.Component {
       keyExtractor = {( item, index) => index.toString()}
       renderItem = { info => (
         <ListItem
-          personName={ info.item.value }
-          />
+          item={ info.item.value }
+        />
       )}
       />
     )
@@ -51,17 +52,24 @@ class AddNames extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
-        <Text>Who's going to {this.props.currentTrip.tripName}?</Text>
-        </Header>
+        <HeaderBanner
+          title = {`Who's going to ${this.props.currentTrip.tripName}?`}
+        />
         <Content>
-          <NameInput
-            nameHandler = { this.personNameChangeHandler }
-          />
-          <SubmitButton
-            submitHandler = { this.nameSubmitHandler }
-          />
-          { this.namesOutput() }
+          <Content style={styles.container}>
+            <Input
+              onChangeText = { this.personNameChangeHandler.bind(this) }
+              placeholder= {"Name"}
+            />
+          </Content>
+          <Content>
+            <SubmitButton
+              submitHandler = { this.nameSubmitHandler }
+            />
+          </Content>
+          <Content style={styles.container}>
+            { this.namesOutput() }
+          </Content>
         </Content>
       </Container>
     );
@@ -83,5 +91,11 @@ const mapDistpatchToProps = dispatch => {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 15
+  }
+})
 
 export default connect(mapStateToProps, mapDistpatchToProps)(AddNames)

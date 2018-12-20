@@ -1,8 +1,9 @@
 import React from 'react';
-import { FlatList, Button , View} from 'react-native';
+import { FlatList, Button , View, StyleSheet } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Subtitle, Item, Form, Picker, Icon } from 'native-base'
 import { connect } from 'react-redux';
 import NameTaskList from '../components/nameTaskList';
+import HeaderBanner from '../components/header';
 
 
 export class SummaryPage extends React.Component {
@@ -14,15 +15,14 @@ export class SummaryPage extends React.Component {
   }
 
   render() {
-    console.log(this.props.reduxstate)
     return (
       <Container>
-        <Header>
-          <Title>Summary</Title>
-        </Header>
-        <Title>Name: {this.props.currentTrip.tripName}</Title>
-        <Title>Location: {this.props.currentTrip.tripLocation}</Title>
-        <Title>Date: {this.props.currentTrip.tripStartDate.toString()}-{this.props.currentTrip.tripEndDate.toString()} </Title>
+        <HeaderBanner
+          title = {"Summary"}
+        />
+        <Title style={styles.title}>Name: {this.props.currentTrip.tripName}</Title>
+        <Title style={styles.title}>Location: {this.props.currentTrip.tripLocation}</Title>
+        <Title style={styles.title}>Date: {this.props.currentTrip.tripStartDate.toString()}-{this.props.currentTrip.tripEndDate.toString()} </Title>
         <FlatList
           data = {this.props.assignedTasks}
           keyExtractor = {( item, index) => index.toString()}
@@ -48,5 +48,13 @@ const mapStateToProps = state => {
     reduxstate: state
   }
 }
+
+const styles = StyleSheet.create({
+  title: {
+    color: 'black',
+    fontFamily: 'MuseoSansRounded-300',
+    fontWeight: 'bold'
+  }
+});
 
 export default connect(mapStateToProps)(SummaryPage);

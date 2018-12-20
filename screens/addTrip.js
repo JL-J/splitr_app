@@ -1,10 +1,11 @@
 import React from 'react';
-import { FlatList, TextInput, Alert, Button } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Subtitle, DatePicker, Item, Form, Icon} from 'native-base';
+import { FlatList, TextInput, Alert, Button, StyleSheet } from 'react-native';
+import { Container, Content, Text, Body, DatePicker, Item, Form, Icon} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
 import Calendar from '../components/calendar'
-import ListTrip from '../components/listTrip';
+import Input from '../components/input';
+import HeaderBanner from '../components/header';
 import { connect } from 'react-redux';
 import { addTrip } from '../redux/actions/trip';
 
@@ -74,7 +75,7 @@ class AddTrip extends React.Component {
 
   tripSubmitHandler = () => {
     if(this.state.tripName.trim() === '') {
-      Alert.alert(' Not submitted', 'Please enter trip name' )
+      Alert.alert('Not submitted', 'Please enter trip name' )
       return;
     }
     let trip = {
@@ -95,38 +96,44 @@ class AddTrip extends React.Component {
 
   render() {
     return (
-      <Container>
-      <Header>
-      <Title> 🌎 </Title>
-      <Text>Enter the details of your event or trip:</Text>
-      </Header>
+      <Container style={styles.container}>
+        <HeaderBanner
+          title = {"Event details"}
+        />
         <Content>
-          <TextInput
+          <Input
             onChangeText = { this.tripNameChangeHandler.bind(this)}
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            placeholder="Trip Name"
+            placeholder= {"Event Name"}
           />
-          <TextInput
+          <Input
             onChangeText = { this.tripLocationChangeHandler.bind(this)}
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            placeholder="Location"
+            placeholder= {"Location"}
           />
-          <Text>Start Date:</Text>
-          <Calendar
-            onDateChangeHandler = {this.tripStartDateChangeHandler.bind(this)}
-          />
-          <Text>End Date:</Text>
-          <Calendar
-            onDateChangeHandler = {this.tripEndDateChangeHandler.bind(this)}
-          />
-          <SubmitButton
-            submitHandler =  {this.tripSubmitHandler}
-          />
+        <Calendar
+          placeholder = {"Start Date"}
+          onDateChangeHandler = {this.tripStartDateChangeHandler.bind(this)}
+        />
+        <Calendar
+          placeholder = {"End Date"}
+          onDateChangeHandler = {this.tripEndDateChangeHandler.bind(this)}
+        />
+        <SubmitButton
+          submitHandler =  {this.tripSubmitHandler}
+        />
         </Content>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 15
+  },
+  input: {
+    padding: 12,
+  }
+});
 
 const mapStateToProps = state => {
   return {
