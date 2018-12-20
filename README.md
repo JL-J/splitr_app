@@ -1,16 +1,16 @@
-# Splitr - split the bill... not your friendships
+# Splitr - split the tasks... not your friendships
 
-
+Big tasks often require division of labour. A lack of organisation can cause total chaos. Splitr is a simple way to split up tasks between a group of friends, in preparation for an event.
 
 ## Getting started
-To get run a simulation of Splitr on your computer you'll need to download Xcode (Iphone simulator) and/or Android Studio (Android emulator). Please note this may take a few minutes.
+To get run a simulation of Splitr on your computer you'll need to download Xcode (iPhone simulator) and/or Android Studio (Android emulator). Please note this may take a few minutes.
 
 Once you've downloaded one or both programs, clone this repo and run the following command:
 `npm install`
 
-For the Iphone simulator, open the `ios` folder of this program in Xcode and press the "play" button.
+For the iPhone simulator, open the `ios` folder of this program in Xcode and press the "play" button.
 
-For the android simulator, run the following commands in two seperate terminals:
+For the Android simulator, run the following commands in two separate terminals:
 `npm start`
 `react-native run-android`
 
@@ -24,42 +24,36 @@ We have used ESlint to keep our code clean. To run our linter, use the following
 `./node_modules/.bin/eslint .`
 
 ## User Stories
-Our app allows users to split payment of a receipt at a restaurant.
+Our app allows users to split tasks in preparation for an event.
 
 ```
 As a user
-So that I can assign diners to pay for certain dishes,
-I want to enter all diners' names.
-```
-
-```
-As a user
-So that I can organise payment for the meal,
-I want to be able to add each dish (with price) one by one
+So that I can organise a division of labour for a specific event
+I want to create a new event
 ```
 
 ```
 As a user
-So I can correct my mistakes
-I want to be able to edit and delete dishes
+So that I can assign people to take care of specific tasks,
+I want to enter peoples names.
 ```
 
 ```
 As a user
-So I assign dishes to diners for payment,
-I want to be able to add dishes to a diners' bill.
+So that I can organise tasks,
+I want to be able to add each task one by one (with estimated cost)
 ```
 
 ```
 As a user
-So I can determine which diner will pay for each dish,
-I want to be able assign dishes to a selected diner
+So my friends can see their assigned tasks,
+I want to be able to add the tasks to someone's task list.
 ```
 
 ```
 As a user
-So I determine which diner will pay for dinner,
-I want to see the total amount each diner owes
+So that I can confirm the details of the event
+I would like to see a summary page
 ```
 
 ## Technologies
