@@ -74,10 +74,6 @@ export class PickerPage extends React.Component {
           </Content>
          )}
         />
-      <Button
-            title=">NEXT"
-            onPress={() => this.props.navigation.navigate('Summary')}
-      />
       </Container>
     );
     console.log(out);
