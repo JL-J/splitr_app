@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<SubmitButton /> renders the component correctly 1`] = `
+exports[`<NavigationButton /> renders the component correctly 1`] = `
 <View
   accessible={true}
   isTVSelectable={true}
@@ -14,7 +14,7 @@ exports[`<SubmitButton /> renders the component correctly 1`] = `
     Object {
       "alignItems": "center",
       "alignSelf": "stretch",
-      "backgroundColor": "#e671a7",
+      "backgroundColor": "#007aff",
       "borderBottomWidth": null,
       "borderColor": "#007aff",
       "borderLeftWidth": null,
@@ -38,27 +38,20 @@ exports[`<SubmitButton /> renders the component correctly 1`] = `
 >
   <Text
     style={
-      Array [
-        Object {
-          "backgroundColor": "transparent",
-          "color": "#fff",
-          "fontFamily": "System",
-          "fontSize": 16.5,
-          "marginLeft": 0,
-          "marginRight": 0,
-          "paddingLeft": 16,
-          "paddingRight": 16,
-        },
-        Object {
-          "fontFamily": "Arial",
-          "fontWeight": "bold",
-          "letterSpacing": 5,
-        },
-      ]
+      Object {
+        "backgroundColor": "transparent",
+        "color": "#fff",
+        "fontFamily": "System",
+        "fontSize": 16.5,
+        "marginLeft": 0,
+        "marginRight": 0,
+        "paddingLeft": 16,
+        "paddingRight": 16,
+      }
     }
     uppercase={false}
   >
-    Submit
+    Next
   </Text>
 </View>
 `;

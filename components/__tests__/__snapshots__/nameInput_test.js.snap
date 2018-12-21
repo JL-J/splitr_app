@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NameInput /> renders the component correctly 1`] = `
-<TextInput
-  allowFontScaling={true}
-  placeholder="Name"
+<View
   style={
     Object {
-      "borderColor": "gray",
-      "borderWidth": 1,
-      "height": 40,
+      "padding": 12,
     }
   }
-  underlineColorAndroid="transparent"
-/>
+>
+  <TextInput
+    allowFontScaling={true}
+    style={
+      Object {
+        "borderColor": "gray",
+        "borderWidth": 1,
+        "height": 40,
+      }
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
 `;
