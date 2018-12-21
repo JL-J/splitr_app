@@ -29,8 +29,8 @@ export class SummaryPage extends React.Component {
           <Content style={styles.container}>
             <Title style={styles.title}>Name: {this.props.currentTrip.tripName}</Title>
             <Title style={styles.title}>Location: {this.props.currentTrip.tripLocation}</Title>
-            <Title style={styles.title}>Start Date: {Moment(startDate).format('dddd MMMM YY')} </Title>
-            <Title style={styles.title}>End Date: {Moment(endDate).format('dddd MMMM YY')} </Title>
+            <Title style={styles.title}>Start Date: {Moment(startDate).format('dddd DD MMMM YY')} </Title>
+            <Title style={styles.title}>End Date: {Moment(endDate).format('dddd DD MMMM YY')} </Title>
           </Content>
           <Content>
             <FlatList
