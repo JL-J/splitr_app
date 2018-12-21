@@ -9,6 +9,7 @@ export default class Input extends React.Component {
         <TextInput style={styles.input}
           onChangeText = { this.props.onChangeText}
           placeholder= {this.props.placeholder}
+          value= {this.props.value}
         />
       </View>
     )

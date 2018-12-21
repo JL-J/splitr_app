@@ -9,18 +9,22 @@ import Input from '../components/input';
 import { connect } from 'react-redux';
 import { addName } from '../redux/actions/name';
 
-state = {
-  personName: '',
-  peopleNames: []
-}
-
 class AddNames extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      personName: '',
+      peopleNames: []
+    }
+  }
 
   nameSubmitHandler = () => {
     if(this.state.personName.trim() === '') {
       return;
     }
     this.props.addPerson(this.state.personName);
+    this.setState({personName: ''});
   }
 
   personNameChangeHandler = (value) => {
@@ -60,6 +64,7 @@ class AddNames extends React.Component {
             <Input
               onChangeText = { this.personNameChangeHandler.bind(this) }
               placeholder= {"Name"}
+              value={this.state.personName}
             />
           </Content>
           <Content>

@@ -8,21 +8,24 @@ import HeaderBanner from '../components/header';
 import { connect } from 'react-redux';
 import { addTask } from '../redux/actions/task'
 
-state = {
-  taskName: '',
-  taskPrice: '',
-  task: {},
-  tasks: []
-}
-
 class AddTasks extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      taskName: '',
+      taskPrice: '',
+      task: {},
+      tasks: []
+    }
+  }
 
   orderSubmitHandler = () => {
     if(this.state.taskName.trim() === '') {
       return;
     }
     let task = { taskName: this.state.taskName, taskPrice: this.state.taskPrice };
-    this.props.addTask(task)
+    this.props.addTask(task);
+    this.setState({taskName: '', taskPrice: ''});
   }
 
   taskNameChangeHandler = (value) => {
@@ -68,10 +71,12 @@ class AddTasks extends React.Component {
         <Input
           onChangeText = { this.taskNameChangeHandler.bind(this) }
           placeholder = {"Task"}
+          value={this.state.taskName}
         />
         <Input
           onChangeText = { this.taskPriceChangeHandler.bind(this)}
           placeholder = {"Estimated cost"}
+          value= {this.state.taskPrice}
         />
         </Content>
         <Content>
