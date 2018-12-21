@@ -39,9 +39,9 @@ export class SummaryPage extends React.Component {
             <NameTaskList
               data={info.item}
             />
-          </Content>
           )}
-       />
+          />
+          </Content>
       </Container>
     );
   }
