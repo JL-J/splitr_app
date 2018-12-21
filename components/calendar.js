@@ -13,8 +13,8 @@ export default class Calendar extends React.Component {
         modalTransparent={false}
         animationType={"fade"}
         androidMode={"default"}
-        placeHolderText="Select date"
-        textStyle={{ color: "green" }}
+        placeHolderText={this.props.placeholder}
+        textStyle={{ color: "black" }}
         placeHolderTextStyle={{ color: "#d3d3d3" }}
         onDateChange={ this.props.onDateChangeHandler }
       />

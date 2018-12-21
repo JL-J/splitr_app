@@ -1,11 +1,10 @@
 import React from 'react';
-import { FlatList, Button } from 'react-native';
+import { FlatList, Button, StyleSheet } from 'react-native';
 import { Container, Header, Content, Text, Body, Title } from 'native-base'
 import SubmitButton from '../components/submitButton'
-import NavigationButton from '../components/navigationButton'
-import NameInput from '../components/nameInput'
-import PriceInput from '../components/priceInput'
-import ListTask from '../components/listTask'
+import Input from '../components/input';
+import ListItem from '../components/listItem'
+import HeaderBanner from '../components/header';
 import { connect } from 'react-redux';
 import { addTask } from '../redux/actions/task'
 
@@ -50,9 +49,8 @@ class AddTasks extends React.Component {
       data = { this.props.tasks }
       keyExtractor = {( item, index) => index.toString()}
       renderItem = { info => (
-        <ListTask
-          taskName={ info.item.value.taskName }
-          taskPrice={ info.item.value.taskPrice }
+        <ListItem
+          item = {`${ info.item.value.taskName }    £${ info.item.value.taskPrice }`}
         />
       )}
       />
@@ -62,20 +60,28 @@ class AddTasks extends React.Component {
   render() {
    return (
     <Container>
-      <Header>
-        <Text>What needs to be done or bought for {this.props.currentTrip.tripName}?</Text>
-      </Header>
+    <HeaderBanner
+      title = {`What needs to be done?`}
+    />
       <Content>
-        <NameInput
-          nameHandler = { this.taskNameChangeHandler }
+        <Content style={styles.container}>
+        <Input
+          onChangeText = { this.taskNameChangeHandler.bind(this) }
+          placeholder = {"Task"}
         />
-        <PriceInput
-          nameHandler = { this.taskPriceChangeHandler }
+        <Input
+          onChangeText = { this.taskPriceChangeHandler.bind(this)}
+          placeholder = {"Estimated cost"}
         />
-        <SubmitButton
-          submitHandler = { this.orderSubmitHandler }
-        />
-        { this.namesOutput() }
+        </Content>
+        <Content>
+          <SubmitButton
+            submitHandler = { this.orderSubmitHandler }
+          />
+        </Content>
+        <Content style={styles.container}>
+          { this.namesOutput() }
+        </Content>
       </Content>
     </Container>
     );
@@ -97,5 +103,11 @@ const mapDistpatchToProps = dispatch => {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 15
+  }
+})
 
 export default connect(mapStateToProps, mapDistpatchToProps)(AddTasks)

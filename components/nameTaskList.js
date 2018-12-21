@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, FlatList, View } from 'react-native';
+import { Text, FlatList, View, StyleSheet } from 'react-native';
 import ListItem from './listItem';
 import ListTask from  './listTask';
 
@@ -8,20 +8,34 @@ export default class NameTaskList extends React.Component {
   render() {
     return (
     <View>
-      <ListItem
-        personName = { this.props.data.name.value}
-      />
+      <Text style={styles.title}>
+        { this.props.data.name.value}
+      </Text>
       <FlatList
         data = {this.props.data.tasks}
         keyExtractor = {( item, index) => index.toString()}
         renderItem = { info => (
-          <ListTask
-            taskName={info.item.value.taskName}
-            taskPrice={info.item.value.taskPrice}
-          />
+          <Text style={styles.text}>
+            {info.item.value.taskName}, £{info.item.value.taskPrice}
+          </Text>
         )}
       />
     </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  title: {
+    fontFamily: 'Arial',
+    fontWeight: '200',
+    fontSize: 20,
+    padding: 5,
+    paddingLeft: 5
+  },
+  text: {
+    fontFamily: 'Arial',
+    fontSize: 15,
+    paddingLeft: 20
+  }
+})

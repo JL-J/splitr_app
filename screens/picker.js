@@ -1,7 +1,8 @@
 import React from 'react';
-import { FlatList, Button } from 'react-native';
-import { Container, Header, Content, Text, Body, Title, Subtitle, Item, Form, Picker, Icon } from 'native-base'
+import { FlatList, Button, StyleSheet, Alert } from 'react-native';
+import { Container, Content, Text, Body, Item, Form, Picker, Icon } from 'native-base'
 import { connect } from 'react-redux';
+import HeaderBanner from '../components/header';
 import ListItem from '../components/listItem';
 import { nameSelected } from '../redux/actions/nameSelected';
 import { assignTasks } from '../redux/actions/assignTasks';
@@ -62,23 +63,22 @@ export class PickerPage extends React.Component {
         }
       }
      this.props.assignTasks(data);
+     Alert.alert('Submitted', '' )
    }
 
   render() {
     return (
       <Container>
-          <Header>
-            <Text>Who's responsible for each task for {this.props.currentTrip.tripName}?</Text>
-          </Header>
+        <HeaderBanner
+          title = {`Who's responsible for each task?`}
+        />
         <FlatList
           data = { this.props.tasks }
           extraData={this.state}
           keyExtractor = {( item, index) => index.toString()}
           renderItem = { info => (
             <Content>
-              <ListItem
-                personName={ info.item.value.taskName }
-              />
+                <Text style={styles.text}>{ info.item.value.taskName }, £{ info.item.value.taskPrice }</Text>
               <Form>
               <Item picker>
                 <Picker
@@ -132,4 +132,12 @@ const mapDistpatchToProps = dispatch => {
     }
   }
 }
+const styles = StyleSheet.create({
+  text: {
+    fontFamily: 'Arial',
+    fontSize: 20,
+    padding: 5,
+    paddingLeft: 5
+  }
+})
 export default connect(mapStateToProps,mapDistpatchToProps)(PickerPage);
