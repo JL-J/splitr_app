@@ -13,7 +13,7 @@ const ListItem = (props) => {
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'MuseoSansRounded-300',
+    fontFamily: 'Arial',
     textAlign: 'center',
     fontSize: 20,
     padding: 5,

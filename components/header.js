@@ -23,7 +23,7 @@ export default class HeaderBanner extends React.Component {
     header: {
       color: 'black',
       textAlign: 'center',
-      fontFamily: 'MuseoSansRounded-300',
+      fontFamily: 'Arial',
       letterSpacing: 5,
       fontWeight: 'bold'
     }

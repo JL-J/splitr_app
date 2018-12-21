@@ -70,7 +70,7 @@ export class PickerPage extends React.Component {
     return (
       <Container>
         <HeaderBanner
-          title = {`Who's responsible for each task for ${this.props.currentTrip.tripName}?`}
+          title = {`Who's responsible for each task?`}
         />
         <FlatList
           data = { this.props.tasks }
@@ -134,7 +134,7 @@ const mapDistpatchToProps = dispatch => {
 }
 const styles = StyleSheet.create({
   text: {
-    fontFamily: 'MuseoSansRounded-300',
+    fontFamily: 'Arial',
     fontSize: 20,
     padding: 5,
     paddingLeft: 5

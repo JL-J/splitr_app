@@ -61,7 +61,7 @@ class AddTasks extends React.Component {
    return (
     <Container>
     <HeaderBanner
-      title = {`What needs to be done for ${this.props.currentTrip.tripName}?`}
+      title = {`What needs to be done?`}
     />
       <Content>
         <Content style={styles.container}>

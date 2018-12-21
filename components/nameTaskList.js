@@ -27,14 +27,14 @@ export default class NameTaskList extends React.Component {
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: 'MuseoSansRounded-300',
+    fontFamily: 'Arial',
     fontWeight: '200',
     fontSize: 20,
     padding: 5,
     paddingLeft: 5
   },
   text: {
-    fontFamily: 'MuseoSansRounded-300',
+    fontFamily: 'Arial',
     fontSize: 15,
     paddingLeft: 20
   }

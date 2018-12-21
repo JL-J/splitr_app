@@ -21,6 +21,6 @@ const styles = {
   text: {
     letterSpacing: 5,
     fontWeight: 'bold',
-    fontFamily: 'MuseoSansRounded-300'
+    fontFamily: 'Arial'
   }
 }

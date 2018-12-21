@@ -53,7 +53,7 @@ class AddNames extends React.Component {
     return (
       <Container>
         <HeaderBanner
-          title = {`Who's going to ${this.props.currentTrip.tripName}?`}
+          title = {`Who's attending`}
         />
         <Content>
           <Content style={styles.container}>
