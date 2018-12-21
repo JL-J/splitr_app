@@ -70,7 +70,7 @@ export class PickerPage extends React.Component {
     return (
       <Container>
         <HeaderBanner
-          title = {`Who's responsible for each task?`}
+          title = {`Who's responsible?`}
         />
         <FlatList
           data = { this.props.tasks }

@@ -26,21 +26,23 @@ export class SummaryPage extends React.Component {
           title = {"Summary"}
         />
         <Content>
-          <Title style={styles.title}>Name: {this.props.currentTrip.tripName}</Title>
-          <Title style={styles.title}>Location: {this.props.currentTrip.tripLocation}</Title>
-          <Title style={styles.title}>Start Date: {Moment(startDate).format('dddd MMMM YY')} </Title>
-          <Title style={styles.title}>End Date: {Moment(endDate).format('dddd MMMM YY')} </Title>
-        </Content>
-        <Content>
-          <FlatList
-            data = {this.props.assignedTasks}
-            keyExtractor = {( item, index) => index.toString()}
-            renderItem = { info => (
-            <NameTaskList
-              data={info.item}
+          <Content style={styles.container}>
+            <Title style={styles.title}>Name: {this.props.currentTrip.tripName}</Title>
+            <Title style={styles.title}>Location: {this.props.currentTrip.tripLocation}</Title>
+            <Title style={styles.title}>Start Date: {Moment(startDate).format('dddd MMMM YY')} </Title>
+            <Title style={styles.title}>End Date: {Moment(endDate).format('dddd MMMM YY')} </Title>
+          </Content>
+          <Content>
+            <FlatList
+              data = {this.props.assignedTasks}
+              keyExtractor = {( item, index) => index.toString()}
+              renderItem = { info => (
+              <NameTaskList
+                data={info.item}
+              />
+              )}
             />
-          )}
-          />
+            </Content>
           </Content>
       </Container>
     );
@@ -64,6 +66,9 @@ const styles = StyleSheet.create({
     color: 'black',
     fontFamily: 'Arial',
     fontWeight: 'bold'
+  },
+  container: {
+    paddingVertical: 15
   }
 });
 
