@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, TextInput, Alert, Button } from 'react-native';
+import { FlatList, TextInput, Alert, Button, Platform, StyleSheet } from 'react-native';
 import { Container, Header, Content, Text, Body, Title, Subtitle, DatePicker, Item, Form, Icon} from 'native-base';
 import SubmitButton from '../components/submitButton'
 import NavigationButton from '../components/navigationButton'
@@ -96,11 +96,11 @@ class AddTrip extends React.Component {
   render() {
     return (
       <Container>
-      <Header>
+      <Header style={styles.container}>
       <Title> 🌎 </Title>
       <Text>Enter the details of your event or trip:</Text>
       </Header>
-        <Content>
+        <Content style={styles.container}>
           <TextInput
             onChangeText = { this.tripNameChangeHandler.bind(this)}
             style={{height: 40, borderColor: 'gray', borderWidth: 1}}
@@ -127,6 +127,20 @@ class AddTrip extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        backgroundColor: 'red',
+      },
+      android: {
+        backgroundColor: 'blue',
+      },
+    }),
+  },
+});
 
 const mapStateToProps = state => {
   return {

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1545312673401" clover="3.2.0">
-  <project timestamp="1545312673401" name="All files">
-    <metrics statements="99" coveredstatements="98" conditionals="40" coveredconditionals="33" methods="22" coveredmethods="22" elements="161" coveredelements="153" complexity="0" loc="99" ncloc="99" packages="5" files="18" classes="18">
-      <package name="Splitr">
+<coverage generated="1545316058609" clover="3.2.0">
+  <project timestamp="1545316058609" name="All files">
+    <metrics statements="103" coveredstatements="103" conditionals="40" coveredconditionals="35" methods="23" coveredmethods="23" elements="166" coveredelements="161" complexity="0" loc="103" ncloc="103" packages="5" files="19" classes="19">
+      <package name="splitr_app_master">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <file name="setupTests.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/setupTests.js">
+        <file name="setupTests.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/setupTests.js">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="15" type="stmt"/>
-          <line num="2" count="15" type="stmt"/>
-          <line num="5" count="15" type="stmt"/>
+          <line num="1" count="17" type="stmt"/>
+          <line num="2" count="17" type="stmt"/>
+          <line num="5" count="17" type="stmt"/>
         </file>
       </package>
-      <package name="Splitr.components">
+      <package name="splitr_app_master.components">
         <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
-        <file name="listItem.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/listItem.js">
+        <file name="listItem.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/listItem.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -21,7 +21,7 @@
           <line num="5" count="2" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
         </file>
-        <file name="listTask.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/listTask.js">
+        <file name="listTask.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/listTask.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -29,7 +29,7 @@
           <line num="5" count="2" type="stmt"/>
           <line num="15" count="1" type="stmt"/>
         </file>
-        <file name="listTrip.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/listTrip.js">
+        <file name="listTrip.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/listTrip.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -37,7 +37,7 @@
           <line num="5" count="2" type="stmt"/>
           <line num="17" count="1" type="stmt"/>
         </file>
-        <file name="nameInput.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/nameInput.js">
+        <file name="nameInput.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/nameInput.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -45,7 +45,7 @@
           <line num="7" count="2" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
         </file>
-        <file name="priceInput.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/priceInput.js">
+        <file name="priceInput.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/priceInput.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -53,7 +53,7 @@
           <line num="7" count="2" type="stmt"/>
           <line num="14" count="1" type="stmt"/>
         </file>
-        <file name="submitButton.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/components/submitButton.js">
+        <file name="submitButton.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/components/submitButton.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="1" count="1" type="stmt"/>
           <line num="2" count="1" type="stmt"/>
@@ -62,112 +62,119 @@
           <line num="14" count="1" type="stmt"/>
         </file>
       </package>
-      <package name="Splitr.redux">
+      <package name="splitr_app_master.redux">
         <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="store.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/store.js">
+        <file name="store.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/store.js">
           <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="2" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="4" count="5" type="stmt"/>
-          <line num="5" count="5" type="stmt"/>
-          <line num="6" count="5" type="stmt"/>
-          <line num="8" count="5" type="stmt"/>
-          <line num="16" count="5" type="stmt"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="2" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="4" count="6" type="stmt"/>
+          <line num="5" count="6" type="stmt"/>
+          <line num="6" count="6" type="stmt"/>
+          <line num="8" count="6" type="stmt"/>
+          <line num="16" count="6" type="stmt"/>
           <line num="17" count="1" type="stmt"/>
-          <line num="20" count="5" type="stmt"/>
+          <line num="20" count="6" type="stmt"/>
         </file>
       </package>
-      <package name="Splitr.redux.actions">
-        <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
-        <file name="name.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/actions/name.js">
+      <package name="splitr_app_master.redux.actions">
+        <metrics statements="25" coveredstatements="25" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <file name="assignTasks.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/assignTasks.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="2" type="stmt"/>
           <line num="3" count="2" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="8" count="2" type="stmt"/>
         </file>
-        <file name="nameSelected.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/actions/nameSelected.js">
+        <file name="name.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/name.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="2" type="stmt"/>
           <line num="3" count="2" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="8" count="2" type="stmt"/>
         </file>
-        <file name="task.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/actions/task.js">
+        <file name="nameSelected.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/nameSelected.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="2" type="stmt"/>
           <line num="3" count="2" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="8" count="2" type="stmt"/>
         </file>
-        <file name="trip.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/actions/trip.js">
+        <file name="task.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/task.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="2" type="stmt"/>
           <line num="3" count="2" type="stmt"/>
           <line num="4" count="1" type="stmt"/>
           <line num="8" count="2" type="stmt"/>
         </file>
-        <file name="types.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/actions/types.js">
+        <file name="trip.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/trip.js">
+          <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+          <line num="1" count="2" type="stmt"/>
+          <line num="3" count="2" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="8" count="2" type="stmt"/>
+        </file>
+        <file name="types.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/actions/types.js">
           <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-          <line num="1" count="9" type="stmt"/>
-          <line num="2" count="9" type="stmt"/>
-          <line num="3" count="9" type="stmt"/>
-          <line num="4" count="9" type="stmt"/>
-          <line num="5" count="9" type="stmt"/>
+          <line num="1" count="11" type="stmt"/>
+          <line num="2" count="11" type="stmt"/>
+          <line num="3" count="11" type="stmt"/>
+          <line num="4" count="11" type="stmt"/>
+          <line num="5" count="11" type="stmt"/>
         </file>
       </package>
-      <package name="Splitr.redux.reducers">
-        <metrics statements="35" coveredstatements="34" conditionals="40" coveredconditionals="33" methods="5" coveredmethods="5"/>
-        <file name="assignTasksReducer.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/reducers/assignTasksReducer.js">
-          <metrics statements="7" coveredstatements="6" conditionals="8" coveredconditionals="5" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="7" count="11" type="cond" truecount="4" falsecount="2"/>
-          <line num="8" count="11" type="cond" truecount="1" falsecount="1"/>
-          <line num="10" count="0" type="stmt"/>
-          <line num="15" count="11" type="stmt"/>
-          <line num="20" count="5" type="stmt"/>
-        </file>
-        <file name="nameReducer.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/reducers/nameReducer.js">
+      <package name="splitr_app_master.redux.reducers">
+        <metrics statements="35" coveredstatements="35" conditionals="40" coveredconditionals="35" methods="5" coveredmethods="5"/>
+        <file name="assignTasksReducer.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/reducers/assignTasksReducer.js">
           <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="7" count="14" type="cond" truecount="5" falsecount="1"/>
-          <line num="8" count="14" type="cond" truecount="2" falsecount="0"/>
-          <line num="10" count="2" type="stmt"/>
-          <line num="18" count="12" type="stmt"/>
-          <line num="22" count="5" type="stmt"/>
-        </file>
-        <file name="nameSelectedReducer.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/reducers/nameSelectedReducer.js">
-          <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="7" count="13" type="cond" truecount="5" falsecount="1"/>
-          <line num="8" count="13" type="cond" truecount="2" falsecount="0"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="7" count="15" type="cond" truecount="5" falsecount="1"/>
+          <line num="8" count="15" type="cond" truecount="2" falsecount="0"/>
           <line num="10" count="1" type="stmt"/>
-          <line num="17" count="12" type="stmt"/>
-          <line num="22" count="5" type="stmt"/>
+          <line num="15" count="14" type="stmt"/>
+          <line num="20" count="6" type="stmt"/>
         </file>
-        <file name="taskReducer.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/reducers/taskReducer.js">
+        <file name="nameReducer.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/reducers/nameReducer.js">
           <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="7" count="14" type="cond" truecount="5" falsecount="1"/>
-          <line num="8" count="14" type="cond" truecount="2" falsecount="0"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="7" count="16" type="cond" truecount="5" falsecount="1"/>
+          <line num="8" count="16" type="cond" truecount="2" falsecount="0"/>
           <line num="10" count="2" type="stmt"/>
-          <line num="18" count="12" type="stmt"/>
-          <line num="23" count="5" type="stmt"/>
+          <line num="18" count="14" type="stmt"/>
+          <line num="22" count="6" type="stmt"/>
         </file>
-        <file name="tripReducer.js" path="/Users/williammuxworthy/Documents/makers_academy/Splitr/redux/reducers/tripReducer.js">
+        <file name="nameSelectedReducer.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/reducers/nameSelectedReducer.js">
           <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
-          <line num="1" count="5" type="stmt"/>
-          <line num="3" count="5" type="stmt"/>
-          <line num="8" count="14" type="cond" truecount="5" falsecount="1"/>
-          <line num="9" count="14" type="cond" truecount="2" falsecount="0"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="7" count="15" type="cond" truecount="5" falsecount="1"/>
+          <line num="8" count="15" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="17" count="14" type="stmt"/>
+          <line num="22" count="6" type="stmt"/>
+        </file>
+        <file name="taskReducer.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/reducers/taskReducer.js">
+          <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="7" count="16" type="cond" truecount="5" falsecount="1"/>
+          <line num="8" count="16" type="cond" truecount="2" falsecount="0"/>
+          <line num="10" count="2" type="stmt"/>
+          <line num="18" count="14" type="stmt"/>
+          <line num="23" count="6" type="stmt"/>
+        </file>
+        <file name="tripReducer.js" path="/Users/raylenesmith/Desktop/Projects/splitr_app_master/redux/reducers/tripReducer.js">
+          <metrics statements="7" coveredstatements="7" conditionals="8" coveredconditionals="7" methods="1" coveredmethods="1"/>
+          <line num="1" count="6" type="stmt"/>
+          <line num="3" count="6" type="stmt"/>
+          <line num="8" count="16" type="cond" truecount="5" falsecount="1"/>
+          <line num="9" count="16" type="cond" truecount="2" falsecount="0"/>
           <line num="11" count="2" type="stmt"/>
-          <line num="20" count="12" type="stmt"/>
-          <line num="24" count="5" type="stmt"/>
+          <line num="20" count="14" type="stmt"/>
+          <line num="24" count="6" type="stmt"/>
         </file>
       </package>
     </metrics>
